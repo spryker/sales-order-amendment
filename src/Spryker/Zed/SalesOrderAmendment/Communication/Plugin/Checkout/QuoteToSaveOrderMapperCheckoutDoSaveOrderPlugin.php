@@ -13,19 +13,16 @@ use Spryker\Zed\CheckoutExtension\Dependency\Plugin\CheckoutDoSaveOrderInterface
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 
 /**
- * @method \Spryker\Zed\SalesOrderAmendment\SalesOrderAmendmentConfig getConfig()
- * @method \Spryker\Zed\SalesOrderAmendment\Business\SalesOrderAmendmentBusinessFactory getBusinessFactory()()
  * @method \Spryker\Zed\SalesOrderAmendment\Business\SalesOrderAmendmentFacadeInterface getFacade()
+ * @method \Spryker\Zed\SalesOrderAmendment\SalesOrderAmendmentConfig getConfig()
  */
-class SalesOrderAmendmentQuoteCheckoutDoSaveOrderPlugin extends AbstractPlugin implements CheckoutDoSaveOrderInterface
+class QuoteToSaveOrderMapperCheckoutDoSaveOrderPlugin extends AbstractPlugin implements CheckoutDoSaveOrderInterface
 {
     /**
      * {@inheritDoc}
-     * - Does nothing if a sales order amendment quote already exists for the provided `QuoteTransfer.amendmentOrderReference`.
-     * - Requires `QuoteTransfer.amendmentOrderReference` to be set.
-     * - Requires `QuoteTransfer.customer` to be set.
-     * - Requires `QuoteTransfer.customer.customerReference` to be set.
-     * - Creates a new sales order amendment quote entity based on the provided `QuoteTransfer`.
+     * - Requires `QuoteTransfer.originalOrder` to be set.
+     * - Copies items from `QuoteTransfer` to `SaveOrderTransfer`.
+     * - Maps the original order from `QuoteTransfer.originalOrder` to `SaveOrderTransfer`.
      *
      * @api
      *
@@ -36,8 +33,11 @@ class SalesOrderAmendmentQuoteCheckoutDoSaveOrderPlugin extends AbstractPlugin i
      */
     public function saveOrder(QuoteTransfer $quoteTransfer, SaveOrderTransfer $saveOrderTransfer): void
     {
-        $this->getBusinessFactory()
-            ->createSalesOrderAmendmentQuoteSaver()
-            ->saveNotExistingSalesOrderAmendmentQuote($quoteTransfer);
+        $orderTransfer = $quoteTransfer->getOriginalOrderOrFail();
+        foreach ($quoteTransfer->getItems() as $itemTransfer) {
+            $saveOrderTransfer->addOrderItem(clone $itemTransfer);
+        }
+
+        $saveOrderTransfer->fromArray($orderTransfer->toArray(), true);
     }
 }
