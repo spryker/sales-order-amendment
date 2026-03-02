@@ -33,9 +33,6 @@ class CreateSalesOrderAmendmentQuoteCollectionTest extends Unit
      */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testCreateSalesOrderAmendmentQuoteCollectionShouldPersistQuotes(): void
     {
         // Arrange
@@ -57,9 +54,6 @@ class CreateSalesOrderAmendmentQuoteCollectionTest extends Unit
         ));
     }
 
-    /**
-     * @return void
-     */
     public function testCreateSalesOrderAmendmentQuoteCollectionShouldPersistQuotesWhenStoreNameIsNotProvided(): void
     {
         // Arrange
@@ -75,9 +69,6 @@ class CreateSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertCount(2, $salesOrderAmendmentQuoteCollectionResponseTransfer->getSalesOrderAmendmentQuotes());
     }
 
-    /**
-     * @return void
-     */
     public function testCreateSalesOrderAmendmentQuoteCollectionShouldThrowExceptionWhenCustomerReferenceIsNotProvided(): void
     {
         // Arrange
@@ -93,9 +84,6 @@ class CreateSalesOrderAmendmentQuoteCollectionTest extends Unit
             ->createSalesOrderAmendmentQuoteCollection($salesOrderAmendmentQuoteCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testCreateSalesOrderAmendmentQuoteCollectionShouldThrowExceptionWhenAmendmentOrderReferenceIsNotProvided(): void
     {
         // Arrange
@@ -111,9 +99,6 @@ class CreateSalesOrderAmendmentQuoteCollectionTest extends Unit
             ->createSalesOrderAmendmentQuoteCollection($salesOrderAmendmentQuoteCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testCreateSalesOrderAmendmentQuoteCollectionShouldThrowExceptionWhenSalesOrderAmendmentQuotesIsNotProvided(): void
     {
         // Arrange
@@ -128,9 +113,6 @@ class CreateSalesOrderAmendmentQuoteCollectionTest extends Unit
             ->createSalesOrderAmendmentQuoteCollection($salesOrderAmendmentQuoteCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterQuoteFieldsDuringCreation(): void
     {
         // Arrange
@@ -163,9 +145,6 @@ class CreateSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertSame('{"items":[{"sku":"sku1","quantity":1},{"sku":"sku2","quantity":2}]}', $persistedQuoteData);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterQuoteItemFieldsDuringCreation(): void
     {
         // Arrange

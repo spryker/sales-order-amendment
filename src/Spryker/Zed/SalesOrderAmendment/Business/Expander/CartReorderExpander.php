@@ -14,19 +14,10 @@ use Spryker\Service\SalesOrderAmendment\SalesOrderAmendmentServiceInterface;
 
 class CartReorderExpander implements CartReorderExpanderInterface
 {
-    /**
-     * @param \Spryker\Service\SalesOrderAmendment\SalesOrderAmendmentServiceInterface $salesOrderAmendmentService
-     */
     public function __construct(protected SalesOrderAmendmentServiceInterface $salesOrderAmendmentService)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     public function expandCartReorderWithOriginalSalesOrderItems(
         CartReorderRequestTransfer $cartReorderRequestTransfer,
         CartReorderTransfer $cartReorderTransfer

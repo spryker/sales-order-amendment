@@ -32,9 +32,6 @@ class SalesOrderAmendmentCurrentPriceModePreCheckPluginTest extends Unit
      */
     protected SalesOrderAmendmentClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testReturnsTrueWhenAmendmentOrderReferenceIsNotSetAndPriceModeHasBeenChanged(): void
     {
         // Arrange
@@ -47,9 +44,6 @@ class SalesOrderAmendmentCurrentPriceModePreCheckPluginTest extends Unit
         $this->assertTrue($isValid);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsTrueWhenAmendmentOrderReferenceIsSetAndPriceModeHasNotBeenChanged(): void
     {
         // Arrange
@@ -64,9 +58,6 @@ class SalesOrderAmendmentCurrentPriceModePreCheckPluginTest extends Unit
         $this->assertTrue($isValid);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsFalseWhenAmendmentOrderReferenceIsSetAndPriceModeHasBeenChanged(): void
     {
         // Arrange

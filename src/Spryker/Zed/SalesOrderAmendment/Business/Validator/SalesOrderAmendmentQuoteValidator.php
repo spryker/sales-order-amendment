@@ -21,9 +21,6 @@ class SalesOrderAmendmentQuoteValidator implements SalesOrderAmendmentQuoteValid
      */
     protected const ERROR_NOT_FOUND_ENTITY = 'Entity with ID `%d` was not found in the database.';
 
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Persistence\SalesOrderAmendmentRepositoryInterface $salesOrderAmendmentRepository
-     */
     public function __construct(
         protected SalesOrderAmendmentRepositoryInterface $salesOrderAmendmentRepository
     ) {

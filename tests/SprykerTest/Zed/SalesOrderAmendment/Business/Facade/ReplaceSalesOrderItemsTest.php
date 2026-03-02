@@ -42,9 +42,6 @@ class ReplaceSalesOrderItemsTest extends Unit
      */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testThrowsNullValueExceptionWhenOriginalOrderIsNotSetInQuoteTransfer(): void
     {
         // Arrange
@@ -58,9 +55,6 @@ class ReplaceSalesOrderItemsTest extends Unit
         $this->tester->getFacade()->replaceSalesOrderItems(new QuoteTransfer(), $saveOrderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUsesSalesOrderAmendmentItemCollectorStrategyPluginStackStrategyForDividingItemsIntoGroups(): void
     {
         // Arrange
@@ -92,9 +86,6 @@ class ReplaceSalesOrderItemsTest extends Unit
         $this->tester->getFacade()->replaceSalesOrderItems($quoteTransfer, new SaveOrderTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testExecutesSalesOrderItemCollectorPlugins(): void
     {
         // Arrange
@@ -108,9 +99,6 @@ class ReplaceSalesOrderItemsTest extends Unit
         $this->tester->getFacade()->replaceSalesOrderItems($quoteTransfer, new SaveOrderTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testDefaultStrategyCreatesItems(): void
     {
         // Arrange
@@ -134,9 +122,6 @@ class ReplaceSalesOrderItemsTest extends Unit
         $this->tester->getFacade()->replaceSalesOrderItems($quoteTransfer, new SaveOrderTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testDefaultStrategyUpdatesItemsWithDifferentQuantity(): void
     {
         // Arrange
@@ -159,9 +144,6 @@ class ReplaceSalesOrderItemsTest extends Unit
         $this->tester->getFacade()->replaceSalesOrderItems($quoteTransfer, new SaveOrderTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testDefaultStrategyDeletesItems(): void
     {
         // Arrange
@@ -184,9 +166,6 @@ class ReplaceSalesOrderItemsTest extends Unit
         $this->tester->getFacade()->replaceSalesOrderItems($quoteTransfer, new SaveOrderTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testDefaultStrategyDoesCreatesUpdatesAndDeletesItems(): void
     {
         // Arrange
@@ -270,11 +249,6 @@ class ReplaceSalesOrderItemsTest extends Unit
         return $salesFacadeMock;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SaveOrderTransfer $saveOrderTransfer
-     *
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderItem
-     */
     protected function createSalesOrderItemForOrder(SaveOrderTransfer $saveOrderTransfer): SpySalesOrderItem
     {
         return $this->tester->createSalesOrderItemForOrder($saveOrderTransfer->getIdSalesOrderOrFail(), [
@@ -284,13 +258,6 @@ class ReplaceSalesOrderItemsTest extends Unit
         ]);
     }
 
-    /**
-     * @param int $idSalesOrderItem
-     * @param int $quantity
-     * @param string $groupKey
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function createDefaultItemTransfer(
         int $idSalesOrderItem,
         int $quantity = 1,

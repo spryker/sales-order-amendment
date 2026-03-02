@@ -14,12 +14,6 @@ use Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer;
 
 class GroupKeyQuantitySalesOrderAmendmentItemCollectorStrategy implements SalesOrderAmendmentItemCollectorStrategyInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer
-     */
     public function collect(
         QuoteTransfer $quoteTransfer,
         OrderTransfer $orderTransfer

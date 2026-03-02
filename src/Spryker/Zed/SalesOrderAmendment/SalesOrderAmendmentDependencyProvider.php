@@ -98,11 +98,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
      */
     public const SERVICE_SALES_ORDER_AMENDMENT = 'SERVICE_SALES_ORDER_AMENDMENT';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -125,11 +120,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $container = $this->addUtilEncodingService($container);
@@ -137,11 +127,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {
@@ -151,11 +136,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesFacade(Container $container): Container
     {
         $container->set(static::FACADE_SALES, function (Container $container) {
@@ -165,11 +145,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addQuoteFacade(Container $container): Container
     {
         $container->set(static::FACADE_QUOTE, function (Container $container) {
@@ -179,11 +154,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_EXPANDER, function () {
@@ -193,11 +163,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentCreateValidationRulePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_CREATE_VALIDATION_RULE, function () {
@@ -207,11 +172,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentPreCreatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_PRE_CREATE, function () {
@@ -221,11 +181,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentPostCreatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_POST_CREATE, function () {
@@ -235,11 +190,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentUpdateValidationRulePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_UPDATE_VALIDATION_RULE, function () {
@@ -249,11 +199,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentPreUpdatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_PRE_UPDATE, function () {
@@ -263,11 +208,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentPostUpdatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_POST_UPDATE, function () {
@@ -277,11 +217,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentPreDeletePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_PRE_DELETE, function () {
@@ -291,11 +226,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentPostDeletePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_POST_DELETE, function () {
@@ -305,11 +235,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentItemCollectorStrategyPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_ITEM_COLLECTOR_STRATEGY, function () {
@@ -319,11 +244,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderItemCollectorPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_ITEM_COLLECTOR_PLUGIN, function () {
@@ -333,11 +253,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentService(Container $container): Container
     {
         $container->set(static::SERVICE_SALES_ORDER_AMENDMENT, function (Container $container) {
@@ -347,11 +262,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderAmendmentQuoteExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SALES_ORDER_AMENDMENT_QUOTE_EXPANDER, function () {

@@ -35,9 +35,6 @@ class ResetAmendmentQuoteProcessFlowQuotePostMergePluginTest extends Unit
      */
     protected const CONTEXT_ORDER_AMENDMENT = 'order-amendment';
 
-    /**
-     * @return void
-     */
     public function testShouldResetQuoteProcessFlowForDifferentQuotes(): void
     {
         // Arrange
@@ -60,9 +57,6 @@ class ResetAmendmentQuoteProcessFlowQuotePostMergePluginTest extends Unit
         $this->assertNull($persistentQuoteTransfer->getQuoteProcessFlow());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotResetQuoteProcessFlowForSameQuotes(): void
     {
         // Arrange
@@ -85,9 +79,6 @@ class ResetAmendmentQuoteProcessFlowQuotePostMergePluginTest extends Unit
         $this->assertNotNull($persistentQuoteTransfer->getQuoteProcessFlow());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenPersistentQuoteIdIsNotDefined(): void
     {
         // Arrange
@@ -111,9 +102,6 @@ class ResetAmendmentQuoteProcessFlowQuotePostMergePluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenCurrentQuoteIdIsNotDefined(): void
     {
         // Arrange

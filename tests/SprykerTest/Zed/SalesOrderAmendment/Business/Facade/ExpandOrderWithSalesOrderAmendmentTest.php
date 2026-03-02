@@ -31,9 +31,6 @@ class ExpandOrderWithSalesOrderAmendmentTest extends Unit
      */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -41,9 +38,6 @@ class ExpandOrderWithSalesOrderAmendmentTest extends Unit
         $this->tester->configureTestStateMachine([SalesOrderAmendmentBusinessTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExpandOrderWithTheLatestSalesOrderAmendment(): void
     {
         // Arrange
@@ -67,9 +61,6 @@ class ExpandOrderWithSalesOrderAmendmentTest extends Unit
         $this->assertSame($salesOrderAmendment->getUuidOrFail(), $orderTransfer->getSalesOrderAmendmentOrFail()->getUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDoNothingWhenSalesOrderAmendmentForOrderDoesNotExist(): void
     {
         // Arrange

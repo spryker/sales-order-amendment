@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionResponseTransfer
 
 interface SalesOrderAmendmentQuoteUpdaterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionRequestTransfer $salesOrderAmendmentQuoteCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionResponseTransfer
-     */
     public function updateSalesOrderAmendmentQuoteCollection(
         SalesOrderAmendmentQuoteCollectionRequestTransfer $salesOrderAmendmentQuoteCollectionRequestTransfer
     ): SalesOrderAmendmentQuoteCollectionResponseTransfer;

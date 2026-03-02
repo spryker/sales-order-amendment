@@ -17,20 +17,11 @@ class CurrentPriceModeChecker implements CurrentPriceModeCheckerInterface
      */
     protected const GLOSSARY_KEY_PRE_CHECK_CANNOT_CHANGE_PRICE_MODE = 'sales_order_amendment.pre_check.cannot_change_price_mode';
 
-    /**
-     * @param \Spryker\Client\SalesOrderAmendment\Dependency\Client\SalesOrderAmendmentToMessengerClientInterface $messengerClient
-     */
     public function __construct(
         protected SalesOrderAmendmentToMessengerClientInterface $messengerClient
     ) {
     }
 
-    /**
-     * @param string $priceMode
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     public function execute(string $priceMode, QuoteTransfer $quoteTransfer): bool
     {
         if ($quoteTransfer->getAmendmentOrderReference() && $quoteTransfer->getPriceMode() !== $priceMode) {

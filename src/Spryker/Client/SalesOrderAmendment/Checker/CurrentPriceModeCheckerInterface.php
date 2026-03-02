@@ -11,11 +11,5 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface CurrentPriceModeCheckerInterface
 {
-    /**
-     * @param string $priceMode
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     public function execute(string $priceMode, QuoteTransfer $quoteTransfer): bool;
 }

@@ -12,18 +12,10 @@ use Spryker\Zed\SalesOrderAmendment\Business\Reader\OrderReaderInterface;
 
 class QuoteExpander implements QuoteExpanderInterface
 {
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Reader\OrderReaderInterface $orderReader
-     */
     public function __construct(protected OrderReaderInterface $orderReader)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function expandQuoteWithOriginalOrder(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
         $orderTransfer = $this->orderReader->findCustomerOrder(

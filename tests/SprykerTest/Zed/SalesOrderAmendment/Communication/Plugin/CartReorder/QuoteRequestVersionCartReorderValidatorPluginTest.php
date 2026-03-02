@@ -40,9 +40,6 @@ class QuoteRequestVersionCartReorderValidatorPluginTest extends Unit
      */
     protected const GLOSSARY_KEY_ORDER_AMENDMENT_AFTER_QUOTE_REQUEST_IS_FORBIDDEN = 'sales_order_amendment.order_amendment_after_rfq.validation.error.forbidden';
 
-    /**
-     * @return void
-     */
     public function testShouldReturnErrorWhenPrevOrderWasCreatedFromRequestFromQuote(): void
     {
         // Arrange
@@ -62,9 +59,6 @@ class QuoteRequestVersionCartReorderValidatorPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotReturnErrorWhenPrevOrderWasNotCreatedFromRequestFromQuote(): void
     {
         // Arrange
@@ -79,9 +73,6 @@ class QuoteRequestVersionCartReorderValidatorPluginTest extends Unit
         $this->assertEmpty($cartReorderResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowsNullValueExceptionWhenOrderIsNotProvided(): void
     {
         // Assert

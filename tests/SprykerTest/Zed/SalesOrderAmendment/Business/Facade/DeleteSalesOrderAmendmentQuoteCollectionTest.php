@@ -29,9 +29,6 @@ class DeleteSalesOrderAmendmentQuoteCollectionTest extends Unit
   */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldDeleteSalesOrderAmendmentQuotesByIds(): void
     {
         // Arrange
@@ -50,9 +47,6 @@ class DeleteSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertNull($this->tester->findSalesOrderAmendmentQuoteByUuid($salesOrderAmendmentQuoteTransfer2->getUuid()));
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDeleteSalesOrderAmendmentQuotesByUuids(): void
     {
         // Arrange
@@ -71,9 +65,6 @@ class DeleteSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertNull($this->tester->findSalesOrderAmendmentQuoteByUuid($salesOrderAmendmentQuoteTransfer2->getUuid()));
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDeleteSalesOrderAmendmentQuotesByAmendmentOrderReferences(): void
     {
         // Arrange

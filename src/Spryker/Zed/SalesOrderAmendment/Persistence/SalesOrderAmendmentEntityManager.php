@@ -18,11 +18,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class SalesOrderAmendmentEntityManager extends AbstractEntityManager implements SalesOrderAmendmentEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     public function createSalesOrderAmendment(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentTransfer {
@@ -102,11 +97,6 @@ class SalesOrderAmendmentEntityManager extends AbstractEntityManager implements 
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     public function updateSalesOrderAmendment(SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer): SalesOrderAmendmentTransfer
     {
         /** @var \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendment $salesOrderAmendmentEntity */
@@ -129,11 +119,6 @@ class SalesOrderAmendmentEntityManager extends AbstractEntityManager implements 
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return void
-     */
     public function deleteSalesOrderAmendment(SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer): void
     {
         /** @var \Propel\Runtime\Collection\ObjectCollection $salesOrderAmendmentEntities */

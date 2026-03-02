@@ -41,9 +41,6 @@ class UpdateSalesOrderAmendmentTest extends Unit
      */
     protected const GLOSSARY_KEY_VALIDATION_SALES_ORDER_AMENDMENT_DOES_NOT_EXIST = 'sales_order_amendment.validation.sales_order_amendment_does_not_exist';
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -51,9 +48,6 @@ class UpdateSalesOrderAmendmentTest extends Unit
         $this->tester->configureTestStateMachine([SalesOrderAmendmentBusinessTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateExistingSalesOrderAmendment(): void
     {
         // Arrange
@@ -68,9 +62,6 @@ class UpdateSalesOrderAmendmentTest extends Unit
         $this->assertNotNull($salesOrderAmendmentResponseTransfer->getSalesOrderAmendment());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnValidationErrorWhenSalesOrderAmendmentDoesNotExist(): void
     {
         // Arrange
@@ -90,9 +81,6 @@ class UpdateSalesOrderAmendmentTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteSalesOrderAmendmentPreUpdatePluginsStack(): void
     {
         // Arrange
@@ -107,9 +95,6 @@ class UpdateSalesOrderAmendmentTest extends Unit
         $this->tester->getFacade()->updateSalesOrderAmendment($salesOrderAmendmentTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteSalesOrderAmendmentPostUpdatePluginsStack(): void
     {
         // Arrange
@@ -124,9 +109,6 @@ class UpdateSalesOrderAmendmentTest extends Unit
         $this->tester->getFacade()->updateSalesOrderAmendment($salesOrderAmendmentTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteSalesOrderAmendmentValidatorRulePluginsStack(): void
     {
         // Arrange
@@ -141,9 +123,6 @@ class UpdateSalesOrderAmendmentTest extends Unit
         $this->tester->getFacade()->updateSalesOrderAmendment($salesOrderAmendmentTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenUuidIsNotProvided(): void
     {
         // Arrange

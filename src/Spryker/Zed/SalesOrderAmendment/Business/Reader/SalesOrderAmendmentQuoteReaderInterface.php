@@ -13,19 +13,9 @@ use Generated\Shared\Transfer\SalesOrderAmendmentQuoteTransfer;
 
 interface SalesOrderAmendmentQuoteReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionTransfer
-     */
     public function getSalesOrderAmendmentQuoteCollection(
         SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
     ): SalesOrderAmendmentQuoteCollectionTransfer;
 
-    /**
-     * @param string $orderReference
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteTransfer|null
-     */
     public function findSalesOrderAmendmentQuoteByOrderReference(string $orderReference): ?SalesOrderAmendmentQuoteTransfer;
 }

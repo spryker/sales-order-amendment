@@ -16,9 +16,6 @@ use Spryker\Zed\SalesOrderAmendment\Dependency\Service\SalesOrderAmendmentToUtil
 
 class SalesOrderAmendmentQuoteMapper
 {
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Dependency\Service\SalesOrderAmendmentToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(protected SalesOrderAmendmentToUtilEncodingServiceInterface $utilEncodingService)
     {
     }
@@ -45,12 +42,6 @@ class SalesOrderAmendmentQuoteMapper
         return $salesOrderAmendmentQuoteCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendmentQuote $salesOrderAmendmentQuoteEntity
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteTransfer $salesOrderAmendmentQuoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteTransfer
-     */
     public function mapSalesOrderAmendmentQuoteEntityToSalesOrderAmendmentQuoteTransfer(
         SpySalesOrderAmendmentQuote $salesOrderAmendmentQuoteEntity,
         SalesOrderAmendmentQuoteTransfer $salesOrderAmendmentQuoteTransfer

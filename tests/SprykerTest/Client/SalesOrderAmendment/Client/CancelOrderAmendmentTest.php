@@ -29,9 +29,6 @@ class CancelOrderAmendmentTest extends Unit
      */
     protected SalesOrderAmendmentClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testCallsQuoteClientClearQuote(): void
     {
         // Assert
@@ -44,9 +41,6 @@ class CancelOrderAmendmentTest extends Unit
         $this->tester->getClient()->cancelOrderAmendment();
     }
 
-    /**
-     * @return \Spryker\Client\SalesOrderAmendment\Dependency\Client\SalesOrderAmendmentToQuoteClientInterface
-     */
     protected function getQuoteClientMock(): SalesOrderAmendmentToQuoteClientInterface
     {
         $salesOrderAmendmentToQuoteClient = $this->getMockBuilder(SalesOrderAmendmentToQuoteClientInterface::class)

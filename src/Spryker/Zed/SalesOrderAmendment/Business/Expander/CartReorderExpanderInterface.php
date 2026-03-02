@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\CartReorderTransfer;
 
 interface CartReorderExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     public function expandCartReorderWithOriginalSalesOrderItems(
         CartReorderRequestTransfer $cartReorderRequestTransfer,
         CartReorderTransfer $cartReorderTransfer

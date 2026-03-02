@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\SalesOrderAmendmentTransfer;
 
 interface SalesOrderAmendmentValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer
-     */
     public function validate(SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer): SalesOrderAmendmentResponseTransfer;
 }

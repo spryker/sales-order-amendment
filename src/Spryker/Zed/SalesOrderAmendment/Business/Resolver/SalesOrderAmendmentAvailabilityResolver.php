@@ -16,19 +16,10 @@ use Spryker\Service\SalesOrderAmendment\SalesOrderAmendmentServiceInterface;
 
 class SalesOrderAmendmentAvailabilityResolver implements SalesOrderAmendmentAvailabilityResolverInterface
 {
-    /**
-     * @param \Spryker\Service\SalesOrderAmendment\SalesOrderAmendmentServiceInterface $salesOrderAmendmentService
-     */
     public function __construct(protected SalesOrderAmendmentServiceInterface $salesOrderAmendmentService)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SellableItemsRequestTransfer $sellableItemsRequestTransfer
-     * @param \Generated\Shared\Transfer\SellableItemsResponseTransfer $sellableItemsResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\SellableItemsResponseTransfer
-     */
     public function resolve(
         SellableItemsRequestTransfer $sellableItemsRequestTransfer,
         SellableItemsResponseTransfer $sellableItemsResponseTransfer
@@ -127,12 +118,6 @@ class SalesOrderAmendmentAvailabilityResolver implements SalesOrderAmendmentAvai
         return $quantities;
     }
 
-    /**
-     * @param string $sku
-     * @param \Generated\Shared\Transfer\ProductAvailabilityCriteriaTransfer|null $productAvailabilityCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function createItemTransfer(
         string $sku,
         ?ProductAvailabilityCriteriaTransfer $productAvailabilityCriteriaTransfer

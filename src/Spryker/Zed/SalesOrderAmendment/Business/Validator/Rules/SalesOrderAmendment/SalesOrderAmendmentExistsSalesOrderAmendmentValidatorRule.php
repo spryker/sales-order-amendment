@@ -27,19 +27,10 @@ class SalesOrderAmendmentExistsSalesOrderAmendmentValidatorRule implements Sales
      */
     protected const GLOSSARY_KEY_PARAMETER_UUID = '%uuid%';
 
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Persistence\SalesOrderAmendmentRepositoryInterface $salesOrderAmendmentRepository
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Validator\Util\ErrorAdderInterface $errorAdder
-     */
     public function __construct(protected SalesOrderAmendmentRepositoryInterface $salesOrderAmendmentRepository, protected ErrorAdderInterface $errorAdder)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorCollectionTransfer
-     */
     public function validate(SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer): ErrorCollectionTransfer
     {
         $errorCollectionTransfer = new ErrorCollectionTransfer();
@@ -56,11 +47,6 @@ class SalesOrderAmendmentExistsSalesOrderAmendmentValidatorRule implements Sales
         return $errorCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return bool
-     */
     protected function salesOrderAmendmentExists(SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer): bool
     {
         $salesOrderAmendmentConditionsTransfer = (new SalesOrderAmendmentConditionsTransfer())

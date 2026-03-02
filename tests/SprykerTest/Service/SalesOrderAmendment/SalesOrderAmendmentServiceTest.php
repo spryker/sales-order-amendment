@@ -29,9 +29,6 @@ class SalesOrderAmendmentServiceTest extends Unit
      */
     protected SalesOrderAmendmentTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenItemSkuIsNotSet(): void
     {
         // Assert
@@ -42,9 +39,6 @@ class SalesOrderAmendmentServiceTest extends Unit
         $this->tester->getService()->buildOriginalSalesOrderItemGroupKey(new ItemTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUseItemSkuToToBuildTheKey(): void
     {
         // Arrange
@@ -57,9 +51,6 @@ class SalesOrderAmendmentServiceTest extends Unit
         $this->assertSame('sku', $groupKey);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteOriginalSalesOrderItemsGroupKeyExpanderPlugins(): void
     {
         // Arrange

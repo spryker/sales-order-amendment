@@ -18,21 +18,12 @@ class SalesOrderAmendmentQuoteCreator implements SalesOrderAmendmentQuoteCreator
 {
     use TransactionTrait;
 
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Persistence\SalesOrderAmendmentEntityManagerInterface $salesOrderAmendmentEntityManager
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Filter\QuoteFieldsFilterInterface $quoteFieldsFilter
-     */
     public function __construct(
         protected SalesOrderAmendmentEntityManagerInterface $salesOrderAmendmentEntityManager,
         protected QuoteFieldsFilterInterface $quoteFieldsFilter
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionRequestTransfer $salesOrderAmendmentQuoteCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionResponseTransfer
-     */
     public function createSalesOrderAmendmentQuoteCollection(
         SalesOrderAmendmentQuoteCollectionRequestTransfer $salesOrderAmendmentQuoteCollectionRequestTransfer
     ): SalesOrderAmendmentQuoteCollectionResponseTransfer {
@@ -68,11 +59,6 @@ class SalesOrderAmendmentQuoteCreator implements SalesOrderAmendmentQuoteCreator
         return $persistedSalesOrderAmendmentQuoteTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionRequestTransfer $salesOrderAmendmentQuoteCollectionRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(
         SalesOrderAmendmentQuoteCollectionRequestTransfer $salesOrderAmendmentQuoteCollectionRequestTransfer
     ): void {

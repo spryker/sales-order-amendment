@@ -14,19 +14,10 @@ use Spryker\Zed\SalesOrderAmendment\Dependency\Facade\SalesOrderAmendmentToSales
 
 class OrderReader implements OrderReaderInterface
 {
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Dependency\Facade\SalesOrderAmendmentToSalesFacadeInterface $salesFacade
-     */
     public function __construct(protected SalesOrderAmendmentToSalesFacadeInterface $salesFacade)
     {
     }
 
-    /**
-     * @param string $orderReference
-     * @param string $customerReference
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer|null
-     */
     public function findCustomerOrder(string $orderReference, string $customerReference): ?OrderTransfer
     {
         $orderFilterTransfer = (new OrderFilterTransfer())

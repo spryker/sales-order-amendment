@@ -9,8 +9,5 @@ namespace Spryker\Zed\SalesOrderAmendment\Dependency\Facade;
 
 interface SalesOrderAmendmentToQuoteFacadeInterface
 {
-    /**
-     * @return string
-     */
     public function getStorageStrategy(): string;
 }

@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\CartReorderTransfer;
 
 interface CartReorderValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     * @param \Generated\Shared\Transfer\CartReorderResponseTransfer $cartReorderResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function validate(
         CartReorderTransfer $cartReorderTransfer,
         CartReorderResponseTransfer $cartReorderResponseTransfer

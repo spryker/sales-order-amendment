@@ -26,11 +26,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class SalesOrderAmendmentRepository extends AbstractRepository implements SalesOrderAmendmentRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentCriteriaTransfer $salesOrderAmendmentCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentCollectionTransfer
-     */
     public function getSalesOrderAmendmentCollection(
         SalesOrderAmendmentCriteriaTransfer $salesOrderAmendmentCriteriaTransfer
     ): SalesOrderAmendmentCollectionTransfer {
@@ -62,11 +57,6 @@ class SalesOrderAmendmentRepository extends AbstractRepository implements SalesO
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentDeleteCriteriaTransfer $salesOrderAmendmentDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer|null
-     */
     public function findSalesOrderAmendmentByDeleteCriteria(
         SalesOrderAmendmentDeleteCriteriaTransfer $salesOrderAmendmentDeleteCriteriaTransfer
     ): ?SalesOrderAmendmentTransfer {
@@ -89,11 +79,6 @@ class SalesOrderAmendmentRepository extends AbstractRepository implements SalesO
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionTransfer
-     */
     public function getSalesOrderAmendmentQuoteCollection(
         SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
     ): SalesOrderAmendmentQuoteCollectionTransfer {
@@ -125,12 +110,6 @@ class SalesOrderAmendmentRepository extends AbstractRepository implements SalesO
             );
     }
 
-    /**
-     * @param \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendmentQuoteQuery $salesOrderAmendmentQuoteQuery
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
-     *
-     * @return \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendmentQuoteQuery
-     */
     protected function applySalesOrderAmendmentQuoteFilters(
         SpySalesOrderAmendmentQuoteQuery $salesOrderAmendmentQuoteQuery,
         SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
@@ -163,12 +142,6 @@ class SalesOrderAmendmentRepository extends AbstractRepository implements SalesO
         return $salesOrderAmendmentQuoteQuery;
     }
 
-    /**
-     * @param \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendmentQuery $salesOrderAmendmentQuery
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentCriteriaTransfer $salesOrderAmendmentCriteriaTransfer
-     *
-     * @return \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendmentQuery
-     */
     protected function applySalesOrderAmendmentFilters(
         SpySalesOrderAmendmentQuery $salesOrderAmendmentQuery,
         SalesOrderAmendmentCriteriaTransfer $salesOrderAmendmentCriteriaTransfer
@@ -193,12 +166,6 @@ class SalesOrderAmendmentRepository extends AbstractRepository implements SalesO
         return $salesOrderAmendmentQuery;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentDeleteCriteriaTransfer $salesOrderAmendmentDeleteCriteriaTransfer
-     * @param \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendmentQuery $salesOrderAmendmentQuery
-     *
-     * @return \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendmentQuery
-     */
     protected function applySalesOrderAmendmentDeleteFilters(
         SalesOrderAmendmentDeleteCriteriaTransfer $salesOrderAmendmentDeleteCriteriaTransfer,
         SpySalesOrderAmendmentQuery $salesOrderAmendmentQuery
@@ -214,12 +181,6 @@ class SalesOrderAmendmentRepository extends AbstractRepository implements SalesO
         return $salesOrderAmendmentQuery;
     }
 
-    /**
-     * @param \Propel\Runtime\ActiveQuery\ModelCriteria $modelCriteria
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Propel\Runtime\ActiveQuery\ModelCriteria
-     */
     protected function applyPagination(
         ModelCriteria $modelCriteria,
         PaginationTransfer $paginationTransfer

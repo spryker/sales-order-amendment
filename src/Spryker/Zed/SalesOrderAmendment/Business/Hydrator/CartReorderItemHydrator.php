@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ItemTransfer;
 
 class CartReorderItemHydrator implements CartReorderItemHydratorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     public function hydrateOriginalSalesOrderItemGroupKeys(
         CartReorderTransfer $cartReorderTransfer
     ): CartReorderTransfer {
@@ -38,13 +33,6 @@ class CartReorderItemHydrator implements CartReorderItemHydratorInterface
         return $cartReorderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param int $index
-     *
-     * @return void
-     */
     protected function addReorderItem(
         CartReorderTransfer $cartReorderTransfer,
         ItemTransfer $itemTransfer,
@@ -74,11 +62,6 @@ class CartReorderItemHydrator implements CartReorderItemHydratorInterface
         return $reorderItemsIndexedByIdSalesOrderItem;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(CartReorderTransfer $cartReorderTransfer): void
     {
         foreach ($cartReorderTransfer->getOrderItems() as $itemTransfer) {

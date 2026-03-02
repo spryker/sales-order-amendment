@@ -40,9 +40,6 @@ class DeleteSalesOrderAmendmentTest extends Unit
      */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -50,9 +47,6 @@ class DeleteSalesOrderAmendmentTest extends Unit
         $this->tester->configureTestStateMachine([SalesOrderAmendmentBusinessTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDeleteSalesOrderAmendmentFromPersistenceByUuid(): void
     {
         // Arrange
@@ -73,9 +67,6 @@ class DeleteSalesOrderAmendmentTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDeleteSalesOrderAmendmentFromPersistenceByIdSalesOrderAmendment(): void
     {
         // Arrange
@@ -96,9 +87,6 @@ class DeleteSalesOrderAmendmentTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnErrorMessageWhenSalesOrderAmendmentNotFound(): void
     {
         $salesOrderAmendmentDeleteCriteriaTransfer = (new SalesOrderAmendmentDeleteCriteriaTransfer())
@@ -116,9 +104,6 @@ class DeleteSalesOrderAmendmentTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteSalesOrderAmendmentPreDeletePluginsStack(): void
     {
         // Arrange
@@ -135,9 +120,6 @@ class DeleteSalesOrderAmendmentTest extends Unit
         $this->tester->getFacade()->deleteSalesOrderAmendment($salesOrderAmendmentDeleteCriteriaTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteSalesOrderAmendmentPostDeletePluginsStack(): void
     {
         // Arrange

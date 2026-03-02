@@ -9,10 +9,5 @@ namespace Spryker\Client\SalesOrderAmendment\Dependency\Client;
 
 interface SalesOrderAmendmentToMessengerClientInterface
 {
-    /**
-     * @param string $message
-     *
-     * @return void
-     */
     public function addErrorMessage(string $message): void;
 }

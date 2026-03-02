@@ -44,9 +44,6 @@ class AmendmentQuoteNameCartPreReorderPluginTest extends Unit
      */
     protected SalesOrderAmendmentCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateQuoteName(): void
     {
         // Arrange
@@ -65,9 +62,6 @@ class AmendmentQuoteNameCartPreReorderPluginTest extends Unit
         $this->assertSame('Editing Order ' . static::FAKE_ORDER_REFERENCE, $cartReorderTransfer->getQuoteOrFail()->getName());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotUpdateQuoteNameWhenIsAmendmentFalse(): void
     {
         // Arrange
@@ -86,9 +80,6 @@ class AmendmentQuoteNameCartPreReorderPluginTest extends Unit
         $this->assertSame(static::FAKE_QUOTE_NAME, $cartReorderTransfer->getQuoteOrFail()->getName());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotUpdateQuoteWhenIsAmendmentNull(): void
     {
         // Arrange
@@ -106,9 +97,6 @@ class AmendmentQuoteNameCartPreReorderPluginTest extends Unit
         $this->assertSame(static::FAKE_QUOTE_NAME, $cartReorderTransfer->getQuoteOrFail()->getName());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowsNullValueExceptionWhenQuoteIsNotProvided(): void
     {
         // Arrange
@@ -126,9 +114,6 @@ class AmendmentQuoteNameCartPreReorderPluginTest extends Unit
         (new AmendmentQuoteNameCartPreReorderPlugin())->preReorder($cartReorderRequestTransfer, $cartReorderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowsNullValueExceptionWhenOrderReferenceIsNotProvided(): void
     {
         // Arrange

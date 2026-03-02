@@ -35,9 +35,6 @@ class OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPluginTest extends Un
      */
     protected SalesOrderAmendmentCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldHydrateGroupKeysFromOrderItemsToReorderItems(): void
     {
         // Arrange
@@ -66,9 +63,6 @@ class OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPluginTest extends Un
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldHydrateGroupKeysFromOrderItemsToNewReorderItems(): void
     {
         // Arrange
@@ -91,9 +85,6 @@ class OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPluginTest extends Un
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowsRequiredTransferPropertyExceptionWhenOrderItemIdSalesOrderItemIsNotProvided(): void
     {
         // Arrange
@@ -117,9 +108,6 @@ class OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPluginTest extends Un
         (new OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPlugin())->hydrate($cartReorderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowsRequiredTransferPropertyExceptionWhenOrderItemSkuIsNotProvided(): void
     {
         // Arrange
@@ -143,9 +131,6 @@ class OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPluginTest extends Un
         (new OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPlugin())->hydrate($cartReorderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowsRequiredTransferPropertyExceptionWhenOrderItemQuantityIsNotProvided(): void
     {
         // Arrange
@@ -169,9 +154,6 @@ class OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPluginTest extends Un
         (new OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPlugin())->hydrate($cartReorderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowsRequiredTransferPropertyExceptionWhenOrderItemGroupKeyIsNotProvided(): void
     {
         // Arrange
@@ -195,9 +177,6 @@ class OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPluginTest extends Un
         (new OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPlugin())->hydrate($cartReorderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowsRequiredTransferPropertyExceptionWhenReorderItemGroupKeyIsNotProvided(): void
     {
         // Arrange
@@ -219,11 +198,6 @@ class OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPluginTest extends Un
         (new OriginalSalesOrderItemGroupKeyCartReorderItemHydratorPlugin())->hydrate($cartReorderTransfer);
     }
 
-    /**
-     * @param int $idSalesOrderItem
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function buildItemTransfer(int $idSalesOrderItem): ItemTransfer
     {
         return (new ItemBuilder([

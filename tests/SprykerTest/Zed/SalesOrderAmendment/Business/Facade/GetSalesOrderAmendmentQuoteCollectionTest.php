@@ -36,9 +36,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
      */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,9 +43,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->tester->ensureSalesOrderAmendmentQuoteTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentQuoteCollection(): void
     {
         // Arrange
@@ -65,9 +59,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertCount(2, $salesOrderAmendmentQuoteCollectionTransfer->getSalesOrderAmendmentQuotes());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentQuoteCollectionFilteredByIdSalesOrderAmendmentQuote(): void
     {
         // Arrange
@@ -91,9 +82,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentQuoteCollectionFilteredByUuid(): void
     {
         // Arrange
@@ -117,9 +105,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentQuoteCollectionFilteredByStore(): void
     {
         // Arrange
@@ -143,9 +128,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentQuoteCollectionFilteredByCustomerReference(): void
     {
         // Arrange
@@ -169,9 +151,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentQuoteCollectionFilteredByAmendmentOrderReference(): void
     {
         // Arrange
@@ -195,9 +174,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentQuoteCollectionSortedByAmendmentOrderReferenceFieldAsc(): void
     {
         // Arrange
@@ -230,9 +206,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertSame('order-reference-3', $salesOrderAmendmentQuotes->offsetGet(2)->getAmendmentOrderReference());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentQuoteCollectionSortedByAmendmentOrderReferenceFieldDesc(): void
     {
         // Arrange
@@ -265,9 +238,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertSame('order-reference-1', $salesOrderAmendmentQuotes->offsetGet(2)->getAmendmentOrderReference());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentQuoteCollectionPaginatedByLimitAndOffset(): void
     {
         // Arrange
@@ -296,9 +266,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertSame(5, $paginationTransfer->getNbResults());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentQuoteCollectionPaginatedByPageAndMaxPerPage(): void
     {
         // Arrange
@@ -335,9 +302,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertSame(1, $paginationTransfer->getPreviousPageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteSalesOrderAmendmentQuoteExpanderPluginStackWhenWithExpanderPluginsIsTrue(): void
     {
         // Arrange
@@ -353,9 +317,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->tester->getFacade()->getSalesOrderAmendmentQuoteCollection($salesOrderAmendmentQuoteCriteriaTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotExecuteSalesOrderAmendmentQuoteExpanderPluginStackWhenWithExpanderPluginsIsFalse(): void
     {
         // Arrange
@@ -371,9 +332,6 @@ class GetSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->tester->getFacade()->getSalesOrderAmendmentQuoteCollection($salesOrderAmendmentQuoteCriteriaTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotExecuteSalesOrderAmendmentQuoteExpanderPluginStackWhenWithExpanderPluginsIsNull(): void
     {
         // Arrange

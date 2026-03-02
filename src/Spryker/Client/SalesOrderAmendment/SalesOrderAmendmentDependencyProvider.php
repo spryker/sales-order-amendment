@@ -24,11 +24,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractDependencyProvider
      */
     public const CLIENT_MESSENGER = 'CLIENT_MESSENGER';
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     public function provideServiceLayerDependencies(Container $container): Container
     {
         $container = parent::provideServiceLayerDependencies($container);
@@ -38,11 +33,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addQuoteClient(Container $container): Container
     {
         $container->set(static::CLIENT_QUOTE, function (Container $container) {
@@ -52,11 +42,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addMessengerClient(Container $container): Container
     {
         $container->set(static::CLIENT_MESSENGER, function (Container $container) {

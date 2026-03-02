@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\CartReorderTransfer;
 
 interface CartReorderItemHydratorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     public function hydrateOriginalSalesOrderItemGroupKeys(
         CartReorderTransfer $cartReorderTransfer
     ): CartReorderTransfer;

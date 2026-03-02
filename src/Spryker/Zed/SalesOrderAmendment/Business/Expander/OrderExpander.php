@@ -22,18 +22,10 @@ class OrderExpander implements OrderExpanderInterface
      */
     protected const COL_CREATED_AT = 'spy_sales_order_amendment.created_at';
 
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Reader\SalesOrderAmendmentReaderInterface $salesOrderAmendmentReader
-     */
     public function __construct(protected SalesOrderAmendmentReaderInterface $salesOrderAmendmentReader)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function expand(OrderTransfer $orderTransfer): OrderTransfer
     {
         $salesOrderAmendmentConditionsTransfer = (new SalesOrderAmendmentConditionsTransfer())

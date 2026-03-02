@@ -33,9 +33,6 @@ class SalesOrderAmendmentCurrentCurrencyIsoCodePreCheckPluginTest extends Unit
      */
     protected SalesOrderAmendmentClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testReturnsTrueWhenAmendmentOrderReferenceIsNotSetAndCurrencyHasBeenChangedToQuote(): void
     {
         // Arrange
@@ -52,9 +49,6 @@ class SalesOrderAmendmentCurrentCurrencyIsoCodePreCheckPluginTest extends Unit
         $this->assertTrue($isValid);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsTrueWhenAmendmentOrderReferenceIsSetAndCurrencyHasNotBeenChangedToQuote(): void
     {
         // Arrange
@@ -70,9 +64,6 @@ class SalesOrderAmendmentCurrentCurrencyIsoCodePreCheckPluginTest extends Unit
         $this->assertTrue($isValid);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsFalseWhenAmendmentOrderReferenceIsSetAndCurrencyHasBeenChangedToQuote(): void
     {
         // Arrange
@@ -89,11 +80,6 @@ class SalesOrderAmendmentCurrentCurrencyIsoCodePreCheckPluginTest extends Unit
         $this->assertFalse($isValid);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Spryker\Client\SalesOrderAmendment\SalesOrderAmendmentFactory
-     */
     protected function getSalesOrderAmendmentFactoryMock(QuoteTransfer $quoteTransfer): SalesOrderAmendmentFactory
     {
         $factoryMock = $this->getMockBuilder(SalesOrderAmendmentFactory::class)
@@ -104,11 +90,6 @@ class SalesOrderAmendmentCurrentCurrencyIsoCodePreCheckPluginTest extends Unit
         return $factoryMock;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Spryker\Client\SalesOrderAmendment\Dependency\Client\SalesOrderAmendmentToQuoteClientInterface
-     */
     protected function getQuoteClientMock(QuoteTransfer $quoteTransfer): SalesOrderAmendmentToQuoteClientInterface
     {
         $quoteClientMock = $this->getMockBuilder(SalesOrderAmendmentToQuoteClientInterface::class)->getMock();

@@ -18,21 +18,12 @@ class CurrentCurrencyIsoCodeChecker implements CurrentCurrencyIsoCodeCheckerInte
      */
     protected const GLOSSARY_KEY_PRE_CHECK_CANNOT_CHANGE_CURRENCY = 'sales_order_amendment.pre_check.cannot_change_currency';
 
-    /**
-     * @param \Spryker\Client\SalesOrderAmendment\Dependency\Client\SalesOrderAmendmentToQuoteClientInterface $quoteClient
-     * @param \Spryker\Client\SalesOrderAmendment\Dependency\Client\SalesOrderAmendmentToMessengerClientInterface $messengerClient
-     */
     public function __construct(
         protected SalesOrderAmendmentToQuoteClientInterface $quoteClient,
         protected SalesOrderAmendmentToMessengerClientInterface $messengerClient
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return bool
-     */
     public function execute(CurrencyTransfer $currencyTransfer): bool
     {
         $quoteTransfer = $this->quoteClient->getQuote();

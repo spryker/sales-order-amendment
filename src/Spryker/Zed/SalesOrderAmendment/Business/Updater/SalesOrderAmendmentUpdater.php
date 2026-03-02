@@ -31,11 +31,6 @@ class SalesOrderAmendmentUpdater implements SalesOrderAmendmentUpdaterInterface
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer
-     */
     public function updateSalesOrderAmendment(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentResponseTransfer {
@@ -53,11 +48,6 @@ class SalesOrderAmendmentUpdater implements SalesOrderAmendmentUpdaterInterface
         return $salesOrderAmendmentResponseTransfer->setSalesOrderAmendment($salesOrderAmendmentTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     protected function executeUpdateSalesOrderAmendmentTransaction(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentTransfer {
@@ -69,11 +59,6 @@ class SalesOrderAmendmentUpdater implements SalesOrderAmendmentUpdaterInterface
         return $this->executeSalesOrderAmendmentPostUpdatePlugins($salesOrderAmendmentTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     protected function executeSalesOrderAmendmentPreUpdatePlugins(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentTransfer {
@@ -84,11 +69,6 @@ class SalesOrderAmendmentUpdater implements SalesOrderAmendmentUpdaterInterface
         return $salesOrderAmendmentTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     protected function executeSalesOrderAmendmentPostUpdatePlugins(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentTransfer {
@@ -99,11 +79,6 @@ class SalesOrderAmendmentUpdater implements SalesOrderAmendmentUpdaterInterface
         return $salesOrderAmendmentTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer): void
     {
         $salesOrderAmendmentTransfer->requireUuid();

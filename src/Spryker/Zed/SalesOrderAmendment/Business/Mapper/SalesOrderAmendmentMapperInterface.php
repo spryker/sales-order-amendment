@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\SalesOrderAmendmentTransfer;
 
 interface SalesOrderAmendmentMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentRequestTransfer $salesOrderAmendmentRequestTransfer
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     public function mapSalesOrderAmendmentRequestTransferToSalesOrderAmendmentTransfer(
         SalesOrderAmendmentRequestTransfer $salesOrderAmendmentRequestTransfer,
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer

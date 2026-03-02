@@ -19,11 +19,6 @@ class SalesOrderAmendmentQuoteUpdater implements SalesOrderAmendmentQuoteUpdater
 {
     use TransactionTrait;
 
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Persistence\SalesOrderAmendmentEntityManagerInterface $salesOrderAmendmentEntityManager
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Filter\QuoteFieldsFilterInterface $quoteFieldsFilter
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Validator\SalesOrderAmendmentQuoteValidatorInterface $salesOrderAmendmentQuoteValidator
-     */
     public function __construct(
         protected SalesOrderAmendmentEntityManagerInterface $salesOrderAmendmentEntityManager,
         protected QuoteFieldsFilterInterface $quoteFieldsFilter,
@@ -31,11 +26,6 @@ class SalesOrderAmendmentQuoteUpdater implements SalesOrderAmendmentQuoteUpdater
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionRequestTransfer $salesOrderAmendmentQuoteCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionResponseTransfer
-     */
     public function updateSalesOrderAmendmentQuoteCollection(
         SalesOrderAmendmentQuoteCollectionRequestTransfer $salesOrderAmendmentQuoteCollectionRequestTransfer
     ): SalesOrderAmendmentQuoteCollectionResponseTransfer {
@@ -76,11 +66,6 @@ class SalesOrderAmendmentQuoteUpdater implements SalesOrderAmendmentQuoteUpdater
         return $persistedSalesOrderAmendmentQuoteTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionRequestTransfer $salesOrderAmendmentQuoteCollectionRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(
         SalesOrderAmendmentQuoteCollectionRequestTransfer $salesOrderAmendmentQuoteCollectionRequestTransfer
     ): void {

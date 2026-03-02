@@ -53,9 +53,6 @@ class OrderAmendmentQuoteProcessFlowCartPreReorderPluginTest extends Unit
      */
     protected SalesOrderAmendmentCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldSetOrderAmendmentQuoteProcessFlowWhenIsAmendmentFlagIsSetToTrue(): void
     {
         // Arrange
@@ -75,9 +72,6 @@ class OrderAmendmentQuoteProcessFlowCartPreReorderPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDoNothingWhenIsAmendmentFlagIsSetToFalse(): void
     {
         // Arrange
@@ -92,9 +86,6 @@ class OrderAmendmentQuoteProcessFlowCartPreReorderPluginTest extends Unit
         $this->assertNull($cartReorderTransfer->getQuoteOrFail()->getQuoteProcessFlow());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDoNothingWhenIsAmendmentFlagIsNotSet(): void
     {
         // Arrange
@@ -109,9 +100,6 @@ class OrderAmendmentQuoteProcessFlowCartPreReorderPluginTest extends Unit
         $this->assertNull($cartReorderTransfer->getQuoteOrFail()->getQuoteProcessFlow());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenQuoteIsNotProvided(): void
     {
         // Arrange
@@ -126,9 +114,6 @@ class OrderAmendmentQuoteProcessFlowCartPreReorderPluginTest extends Unit
         (new AmendmentOrderReferenceCartPreReorderPlugin())->preReorder($cartReorderRequestTransfer, $cartReorderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowRuntimeExceptionWhenQuoteStorageStrategyIsSession(): void
     {
         // Arrange
@@ -145,11 +130,6 @@ class OrderAmendmentQuoteProcessFlowCartPreReorderPluginTest extends Unit
             ->preReorder($cartReorderRequestTransfer, $cartReorderTransfer);
     }
 
-    /**
-     * @param string $storageStrategy
-     *
-     * @return void
-     */
     protected function mockQuoteFacade(string $storageStrategy): void
     {
         $quoteFacadeMock = $this->getMockBuilder(SalesOrderAmendmentToQuoteFacadeInterface::class)->getMock();

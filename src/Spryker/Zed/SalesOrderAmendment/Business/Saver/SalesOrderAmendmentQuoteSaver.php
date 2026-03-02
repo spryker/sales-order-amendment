@@ -15,21 +15,12 @@ use Spryker\Zed\SalesOrderAmendment\Business\Reader\SalesOrderAmendmentQuoteRead
 
 class SalesOrderAmendmentQuoteSaver implements SalesOrderAmendmentQuoteSaverInterface
 {
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Creator\SalesOrderAmendmentQuoteCreatorInterface $salesOrderAmendmentQuoteCreator
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Reader\SalesOrderAmendmentQuoteReaderInterface $salesOrderAmendmentQuoteReader
-     */
     public function __construct(
         protected SalesOrderAmendmentQuoteCreatorInterface $salesOrderAmendmentQuoteCreator,
         protected SalesOrderAmendmentQuoteReaderInterface $salesOrderAmendmentQuoteReader
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function saveNotExistingSalesOrderAmendmentQuote(QuoteTransfer $quoteTransfer): void
     {
         $salesOrderAmendmentQuoteTransfer = $this->salesOrderAmendmentQuoteReader

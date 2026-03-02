@@ -16,29 +16,14 @@ use Generated\Shared\Transfer\SalesOrderAmendmentTransfer;
 
 interface SalesOrderAmendmentRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentCriteriaTransfer $salesOrderAmendmentCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentCollectionTransfer
-     */
     public function getSalesOrderAmendmentCollection(
         SalesOrderAmendmentCriteriaTransfer $salesOrderAmendmentCriteriaTransfer
     ): SalesOrderAmendmentCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentDeleteCriteriaTransfer $salesOrderAmendmentDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer|null
-     */
     public function findSalesOrderAmendmentByDeleteCriteria(
         SalesOrderAmendmentDeleteCriteriaTransfer $salesOrderAmendmentDeleteCriteriaTransfer
     ): ?SalesOrderAmendmentTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionTransfer
-     */
     public function getSalesOrderAmendmentQuoteCollection(
         SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
     ): SalesOrderAmendmentQuoteCollectionTransfer;

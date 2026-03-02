@@ -25,11 +25,6 @@ class SalesOrderAmendmentQuoteReader implements SalesOrderAmendmentQuoteReaderIn
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionTransfer
-     */
     public function getSalesOrderAmendmentQuoteCollection(
         SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
     ): SalesOrderAmendmentQuoteCollectionTransfer {
@@ -41,11 +36,6 @@ class SalesOrderAmendmentQuoteReader implements SalesOrderAmendmentQuoteReaderIn
             : $salesOrderAmendmentQuoteCollectionTransfer;
     }
 
-    /**
-     * @param string $orderReference
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteTransfer|null
-     */
     public function findSalesOrderAmendmentQuoteByOrderReference(string $orderReference): ?SalesOrderAmendmentQuoteTransfer
     {
         $salesOrderAmendmentQuoteCriteriaTransfer = (new SalesOrderAmendmentQuoteCriteriaTransfer())
@@ -63,11 +53,6 @@ class SalesOrderAmendmentQuoteReader implements SalesOrderAmendmentQuoteReaderIn
             ->current();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionTransfer $salesOrderAmendmentQuoteCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionTransfer
-     */
     protected function executeSalesOrderAmendmentQuoteExpanderPlugins(
         SalesOrderAmendmentQuoteCollectionTransfer $salesOrderAmendmentQuoteCollectionTransfer
     ): SalesOrderAmendmentQuoteCollectionTransfer {

@@ -14,12 +14,6 @@ use Propel\Runtime\Collection\ObjectCollection;
 
 class SalesOrderAmendmentMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     * @param \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendment $salesOrderAmendmentEntity
-     *
-     * @return \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendment
-     */
     public function mapSalesOrderAmendmentTransferToSalesOrderAmendmentEntity(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer,
         SpySalesOrderAmendment $salesOrderAmendmentEntity
@@ -49,12 +43,6 @@ class SalesOrderAmendmentMapper
         return $salesOrderAmendmentCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendment $salesOrderAmendmentEntity
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     public function mapSalesOrderAmendmentEntityToSalesOrderAmendmentTransfer(
         SpySalesOrderAmendment $salesOrderAmendmentEntity,
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer

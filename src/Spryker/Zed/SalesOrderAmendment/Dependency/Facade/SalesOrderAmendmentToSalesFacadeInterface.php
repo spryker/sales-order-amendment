@@ -15,37 +15,17 @@ use Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer;
 
 interface SalesOrderAmendmentToSalesFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemCollectionRequestTransfer $salesOrderItemCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer
-     */
     public function createSalesOrderItemCollectionByQuote(
         SalesOrderItemCollectionRequestTransfer $salesOrderItemCollectionRequestTransfer
     ): SalesOrderItemCollectionResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemCollectionRequestTransfer $salesOrderItemCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer
-     */
     public function updateSalesOrderItemCollectionByQuote(
         SalesOrderItemCollectionRequestTransfer $salesOrderItemCollectionRequestTransfer
     ): SalesOrderItemCollectionResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemCollectionDeleteCriteriaTransfer $salesOrderItemCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer
-     */
     public function deleteSalesOrderItemCollection(
         SalesOrderItemCollectionDeleteCriteriaTransfer $salesOrderItemCollectionDeleteCriteriaTransfer
     ): SalesOrderItemCollectionResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderFilterTransfer $orderFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function getOrder(OrderFilterTransfer $orderFilterTransfer): OrderTransfer;
 }

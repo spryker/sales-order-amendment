@@ -12,9 +12,6 @@ use Spryker\Zed\SalesOrderAmendment\SalesOrderAmendmentConfig;
 
 class QuoteFieldsFilter implements QuoteFieldsFilterInterface
 {
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\SalesOrderAmendmentConfig $salesOrderAmendmentConfig
-     */
     public function __construct(protected SalesOrderAmendmentConfig $salesOrderAmendmentConfig)
     {
     }

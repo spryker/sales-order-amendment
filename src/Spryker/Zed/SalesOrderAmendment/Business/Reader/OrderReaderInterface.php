@@ -11,11 +11,5 @@ use Generated\Shared\Transfer\OrderTransfer;
 
 interface OrderReaderInterface
 {
-    /**
-     * @param string $orderReference
-     * @param string $customerReference
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer|null
-     */
     public function findCustomerOrder(string $orderReference, string $customerReference): ?OrderTransfer;
 }

@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\SellableItemsResponseTransfer;
 
 interface SalesOrderAmendmentAvailabilityResolverInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SellableItemsRequestTransfer $sellableItemsRequestTransfer
-     * @param \Generated\Shared\Transfer\SellableItemsResponseTransfer $sellableItemsResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\SellableItemsResponseTransfer
-     */
     public function resolve(
         SellableItemsRequestTransfer $sellableItemsRequestTransfer,
         SellableItemsResponseTransfer $sellableItemsResponseTransfer

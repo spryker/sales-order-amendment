@@ -32,9 +32,6 @@ class SalesOrderAmendmentClientTester extends Actor
 {
     use _generated\SalesOrderAmendmentClientTesterActions;
 
-    /**
-     * @return \Spryker\Client\SalesOrderAmendment\SalesOrderAmendmentClientInterface
-     */
     public function getClient(): SalesOrderAmendmentClientInterface
     {
         return $this->getLocator()->salesOrderAmendment()->client();

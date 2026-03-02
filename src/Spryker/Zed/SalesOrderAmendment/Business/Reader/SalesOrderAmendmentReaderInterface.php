@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SalesOrderAmendmentCriteriaTransfer;
 
 interface SalesOrderAmendmentReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentCriteriaTransfer $salesOrderAmendmentCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentCollectionTransfer
-     */
     public function getSalesOrderAmendmentCollection(
         SalesOrderAmendmentCriteriaTransfer $salesOrderAmendmentCriteriaTransfer
     ): SalesOrderAmendmentCollectionTransfer;

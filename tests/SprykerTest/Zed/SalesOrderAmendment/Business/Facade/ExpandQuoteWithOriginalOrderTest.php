@@ -31,9 +31,6 @@ class ExpandQuoteWithOriginalOrderTest extends Unit
      */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -41,9 +38,6 @@ class ExpandQuoteWithOriginalOrderTest extends Unit
         $this->tester->configureTestStateMachine([SalesOrderAmendmentBusinessTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExpandQuoteTransferWithOriginalOrder(): void
     {
         // Arrange
@@ -65,9 +59,6 @@ class ExpandQuoteWithOriginalOrderTest extends Unit
         $this->assertSame($orderTransfer->getIdSalesOrderOrFail(), $quoteTransfer->getOriginalOrderOrFail()->getIdSalesOrder());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDoNothingWhenOrderIsNotFound(): void
     {
         // Arrange
@@ -84,9 +75,6 @@ class ExpandQuoteWithOriginalOrderTest extends Unit
         $this->assertNull($quoteTransfer->getOriginalOrder());
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsNullValueExceptionWhenAmendmentOrderReferenceIsNotSet(): void
     {
         // Arrange
@@ -100,9 +88,6 @@ class ExpandQuoteWithOriginalOrderTest extends Unit
         $this->tester->getFacade()->expandQuoteWithOriginalOrder($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testThrowsNullValueExceptionWhenCustomerReferenceIsNotSet(): void
     {
         // Arrange

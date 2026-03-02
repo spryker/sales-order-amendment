@@ -18,11 +18,6 @@ class OriginalSalesOrderItemGroupKeyBuilder implements OriginalSalesOrderItemGro
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return string
-     */
     public function buildOriginalSalesOrderItemGroupKey(ItemTransfer $itemTransfer): string
     {
         $groupKey = $itemTransfer->getSkuOrFail();
@@ -31,12 +26,6 @@ class OriginalSalesOrderItemGroupKeyBuilder implements OriginalSalesOrderItemGro
         return $groupKey;
     }
 
-    /**
-     * @param string $groupKey
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return string
-     */
     protected function executeOriginalSalesOrderItemGroupKeyExpanderPlugins(
         string $groupKey,
         ItemTransfer $itemTransfer

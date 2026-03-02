@@ -13,12 +13,6 @@ use Generated\Shared\Transfer\SalesOrderAmendmentQuoteCriteriaTransfer;
 
 class SalesOrderAmendmentQuoteCriteriaMapper implements SalesOrderAmendmentQuoteCriteriaMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionDeleteCriteriaTransfer $salesOrderAmendmentQuoteCollectionDeleteCriteriaTransfer
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCriteriaTransfer
-     */
     public function mapSalesOrderAmendmentQuoteCollectionDeleteCriteriaTransferToSalesOrderAmendmentQuoteCriteriaTransfer(
         SalesOrderAmendmentQuoteCollectionDeleteCriteriaTransfer $salesOrderAmendmentQuoteCollectionDeleteCriteriaTransfer,
         SalesOrderAmendmentQuoteCriteriaTransfer $salesOrderAmendmentQuoteCriteriaTransfer

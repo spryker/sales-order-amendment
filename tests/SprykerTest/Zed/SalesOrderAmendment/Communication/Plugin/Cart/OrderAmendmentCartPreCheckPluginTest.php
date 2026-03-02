@@ -42,9 +42,6 @@ class OrderAmendmentCartPreCheckPluginTest extends Unit
      */
     protected SalesOrderAmendmentCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -52,9 +49,6 @@ class OrderAmendmentCartPreCheckPluginTest extends Unit
         $this->tester->configureTestStateMachine([SalesOrderAmendmentCommunicationTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCheckOrderAmendmentInCart(): void
     {
         // Arrange
@@ -76,9 +70,6 @@ class OrderAmendmentCartPreCheckPluginTest extends Unit
         $this->assertTrue($cartPreCheckResponseTransfer->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotCheckOrderAmendmentInCart(): void
     {
         // Arrange
@@ -104,9 +95,6 @@ class OrderAmendmentCartPreCheckPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSkipCheckWhenAmendmentOrderReferenceNotSet(): void
     {
         // Arrange
@@ -122,9 +110,6 @@ class OrderAmendmentCartPreCheckPluginTest extends Unit
         $this->assertTrue($cartPreCheckResponseTransfer->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSuccessResponseWhenCustomerReferencesMatch(): void
     {
         // Arrange
@@ -142,9 +127,6 @@ class OrderAmendmentCartPreCheckPluginTest extends Unit
         $this->assertTrue($cartPreCheckResponseTransfer->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenQuoteNotSet(): void
     {
         // Assert
@@ -155,9 +137,6 @@ class OrderAmendmentCartPreCheckPluginTest extends Unit
         (new OrderAmendmentCartPreCheckPlugin())->check((new CartChangeTransfer())->setQuote(null));
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenCustomerNotSet(): void
     {
         // Arrange
@@ -174,9 +153,6 @@ class OrderAmendmentCartPreCheckPluginTest extends Unit
         (new OrderAmendmentCartPreCheckPlugin())->check((new CartChangeTransfer())->setQuote($quoteTransfer));
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenCustomerReferenceNotSet(): void
     {
         // Arrange

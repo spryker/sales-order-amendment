@@ -39,9 +39,6 @@ class AmendmentOrderReferenceCartPreReorderPluginTest extends Unit
      */
     protected SalesOrderAmendmentCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldSetAmendmentOrderReferenceToQuote(): void
     {
         // Arrange
@@ -60,9 +57,6 @@ class AmendmentOrderReferenceCartPreReorderPluginTest extends Unit
         $this->assertSame(static::FAKE_ORDER_REFERENCE, $cartReorderTransfer->getQuoteOrFail()->getAmendmentOrderReference());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotSetAmendmentOrderReferenceToQuoteWhenIsAmendmentFalse(): void
     {
         // Arrange
@@ -81,9 +75,6 @@ class AmendmentOrderReferenceCartPreReorderPluginTest extends Unit
         $this->assertNull($cartReorderTransfer->getQuoteOrFail()->getAmendmentOrderReference());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotSetAmendmentOrderReferenceToQuoteWhenIsAmendmentNull(): void
     {
         // Arrange
@@ -101,9 +92,6 @@ class AmendmentOrderReferenceCartPreReorderPluginTest extends Unit
         $this->assertNull($cartReorderTransfer->getQuoteOrFail()->getAmendmentOrderReference());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotOverrideAmendmentOrderReferenceInQuote(): void
     {
         // Arrange
@@ -124,9 +112,6 @@ class AmendmentOrderReferenceCartPreReorderPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowsNullValueExceptionWhenQuoteIsNotProvided(): void
     {
         // Arrange
@@ -144,9 +129,6 @@ class AmendmentOrderReferenceCartPreReorderPluginTest extends Unit
         (new AmendmentOrderReferenceCartPreReorderPlugin())->preReorder($cartReorderRequestTransfer, $cartReorderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowsNullValueExceptionWhenOrderReferenceIsNotProvided(): void
     {
         // Arrange

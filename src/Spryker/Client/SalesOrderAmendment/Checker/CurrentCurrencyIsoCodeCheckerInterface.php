@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CurrencyTransfer;
 
 interface CurrentCurrencyIsoCodeCheckerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return bool
-     */
     public function execute(CurrencyTransfer $currencyTransfer): bool;
 }

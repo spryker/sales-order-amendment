@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SalesOrderAmendmentTransfer;
 
 interface SalesOrderAmendmentUpdaterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer
-     */
     public function updateSalesOrderAmendment(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentResponseTransfer;

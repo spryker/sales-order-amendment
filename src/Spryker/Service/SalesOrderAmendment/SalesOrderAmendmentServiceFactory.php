@@ -13,9 +13,6 @@ use Spryker\Service\SalesOrderAmendment\GroupKeyBuilder\OriginalSalesOrderItemGr
 
 class SalesOrderAmendmentServiceFactory extends AbstractServiceFactory
 {
-    /**
-     * @return \Spryker\Service\SalesOrderAmendment\GroupKeyBuilder\OriginalSalesOrderItemGroupKeyBuilderInterface
-     */
     public function createOriginalSalesOrderItemGroupKeyBuilder(): OriginalSalesOrderItemGroupKeyBuilderInterface
     {
         return new OriginalSalesOrderItemGroupKeyBuilder(

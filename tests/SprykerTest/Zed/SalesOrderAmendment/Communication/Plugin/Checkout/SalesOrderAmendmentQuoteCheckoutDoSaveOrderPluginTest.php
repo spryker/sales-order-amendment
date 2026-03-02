@@ -34,9 +34,6 @@ class SalesOrderAmendmentQuoteCheckoutDoSaveOrderPluginTest extends Unit
      */
     protected SalesOrderAmendmentCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testSaveOrderShouldCreateSalesOrderAmendmentQuote(): void
     {
         // Arrange
@@ -55,9 +52,6 @@ class SalesOrderAmendmentQuoteCheckoutDoSaveOrderPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testSaveOrderShouldThrowExceptionWhenCustomerIsNotSet(): void
     {
         // Arrange
@@ -72,9 +66,6 @@ class SalesOrderAmendmentQuoteCheckoutDoSaveOrderPluginTest extends Unit
         (new SalesOrderAmendmentQuoteCheckoutDoSaveOrderPlugin())->saveOrder($quoteTransfer, new SaveOrderTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testSaveOrderShouldThrowExceptionWhenCustomerReferenceIsNotSet(): void
     {
         // Arrange
@@ -90,9 +81,6 @@ class SalesOrderAmendmentQuoteCheckoutDoSaveOrderPluginTest extends Unit
         (new SalesOrderAmendmentQuoteCheckoutDoSaveOrderPlugin())->saveOrder($quoteTransfer, new SaveOrderTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testSaveOrderShouldThrowExceptionWhenAmendmentOrderReferenceIsNotSet(): void
     {
         // Arrange
@@ -107,9 +95,6 @@ class SalesOrderAmendmentQuoteCheckoutDoSaveOrderPluginTest extends Unit
         (new SalesOrderAmendmentQuoteCheckoutDoSaveOrderPlugin())->saveOrder($quoteTransfer, new SaveOrderTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testSaveOrderShouldDoNothingWhenSalesOrderAmendmentQuoteExists(): void
     {
         // Arrange

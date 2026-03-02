@@ -11,13 +11,7 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface SalesOrderAmendmentToQuoteClientInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function getQuote(): QuoteTransfer;
 
-    /**
-     * @return void
-     */
     public function clearQuote(): void;
 }

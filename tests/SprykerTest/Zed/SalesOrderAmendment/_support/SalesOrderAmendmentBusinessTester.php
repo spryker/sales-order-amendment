@@ -50,9 +50,6 @@ class SalesOrderAmendmentBusinessTester extends Actor
      */
     public const DEFAULT_OMS_PROCESS_NAME = 'Test01';
 
-    /**
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentRequestTransfer
-     */
     public function createSalesOrderAmendmentRequestTransfer(): SalesOrderAmendmentRequestTransfer
     {
         $customerTransfer = $this->haveCustomer();
@@ -93,11 +90,6 @@ class SalesOrderAmendmentBusinessTester extends Actor
         return $this->haveSalesOrderAmendment($seedData);
     }
 
-    /**
-     * @param string $orderReference
-     *
-     * @return \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendment|null
-     */
     public function findSalesOrderAmendmentByOriginalOrderReference(string $orderReference): ?SpySalesOrderAmendment
     {
         return $this->getSalesOrderAmendmentQuery()
@@ -117,27 +109,16 @@ class SalesOrderAmendmentBusinessTester extends Actor
             ->findOne();
     }
 
-    /**
-     * @return void
-     */
     public function ensureSalesOrderAmendmentTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getSalesOrderAmendmentQuery());
     }
 
-    /**
-     * @return void
-     */
     public function ensureSalesOrderAmendmentQuoteTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getSalesOrderAmendmentQuoteQuery());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuoteTransfer(CustomerTransfer $customerTransfer): QuoteTransfer
     {
         return (new QuoteBuilder([QuoteTransfer::CUSTOMER_REFERENCE => $customerTransfer->getCustomerReferenceOrFail()]))
@@ -185,17 +166,11 @@ class SalesOrderAmendmentBusinessTester extends Actor
             ->addSalesOrderAmendmentQuote($salesOrderAmendmentQuoteTransferTwo);
     }
 
-    /**
-     * @return \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendmentQuery
-     */
     protected function getSalesOrderAmendmentQuery(): SpySalesOrderAmendmentQuery
     {
         return SpySalesOrderAmendmentQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendmentQuoteQuery
-     */
     protected function getSalesOrderAmendmentQuoteQuery(): SpySalesOrderAmendmentQuoteQuery
     {
         return SpySalesOrderAmendmentQuoteQuery::create();

@@ -31,9 +31,6 @@ class ResetAmendmentOrderReferencePreReloadItemsPluginTest extends Unit
      */
     protected const FAKE_ORDER_REFERENCE = 'fake-order-reference';
 
-    /**
-     * @return void
-     */
     public function testShouldResetAmendmentOrderReference(): void
     {
         // Arrange

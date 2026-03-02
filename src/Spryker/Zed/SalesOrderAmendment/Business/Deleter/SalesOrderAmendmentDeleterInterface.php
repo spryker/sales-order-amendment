@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer;
 
 interface SalesOrderAmendmentDeleterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentDeleteCriteriaTransfer $salesOrderAmendmentDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer
-     */
     public function deleteSalesOrderAmendment(
         SalesOrderAmendmentDeleteCriteriaTransfer $salesOrderAmendmentDeleteCriteriaTransfer
     ): SalesOrderAmendmentResponseTransfer;

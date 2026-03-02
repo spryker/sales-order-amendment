@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\ItemTransfer;
 
 interface OriginalSalesOrderItemGroupKeyBuilderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return string
-     */
     public function buildOriginalSalesOrderItemGroupKey(ItemTransfer $itemTransfer): string;
 }

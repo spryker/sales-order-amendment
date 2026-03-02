@@ -39,11 +39,6 @@ class SalesOrderAmendmentCommunicationTester extends Actor
      */
     public const DEFAULT_OMS_PROCESS_NAME = 'Test01';
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuoteTransfer(CustomerTransfer $customerTransfer): QuoteTransfer
     {
         return (new QuoteBuilder([QuoteTransfer::CUSTOMER_REFERENCE => $customerTransfer->getCustomerReferenceOrFail()]))
@@ -69,11 +64,6 @@ class SalesOrderAmendmentCommunicationTester extends Actor
             ->findOne();
     }
 
-    /**
-     * @param string $amendmentOrderReference
-     *
-     * @return int
-     */
     public function countSalesOrderAmendmentQuoteByAmendmentOrderReference(string $amendmentOrderReference): int
     {
         return $this->getSalesOrderAmendmentQuoteQuery()
@@ -81,17 +71,11 @@ class SalesOrderAmendmentCommunicationTester extends Actor
             ->count();
     }
 
-    /**
-     * @return void
-     */
     public function ensureSalesOrderAmendmentQuoteTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getSalesOrderAmendmentQuoteQuery());
     }
 
-    /**
-     * @return \Orm\Zed\SalesOrderAmendment\Persistence\SpySalesOrderAmendmentQuoteQuery
-     */
     protected function getSalesOrderAmendmentQuoteQuery(): SpySalesOrderAmendmentQuoteQuery
     {
         return SpySalesOrderAmendmentQuoteQuery::create();

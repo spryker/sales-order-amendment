@@ -35,9 +35,6 @@ class QuoteToSaveOrderMapperCheckoutDoSaveOrderPluginTest extends Unit
      */
     protected const ORDER_REFERENCE = 'test-order-reference';
 
-    /**
-     * @return void
-     */
     public function testSaveOrderShouldMapOrderAndItems(): void
     {
         // Arrange
@@ -61,9 +58,6 @@ class QuoteToSaveOrderMapperCheckoutDoSaveOrderPluginTest extends Unit
         $this->assertSame(static::ORDER_REFERENCE, $saveOrderTransfer->getOrderReference());
     }
 
-    /**
-     * @return void
-     */
     public function testSaveOrderShouldThrowExceptionWhenOriginalOrderIsNotSet(): void
     {
         // Assert

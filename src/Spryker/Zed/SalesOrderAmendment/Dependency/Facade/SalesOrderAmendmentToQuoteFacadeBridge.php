@@ -22,9 +22,6 @@ class SalesOrderAmendmentToQuoteFacadeBridge implements SalesOrderAmendmentToQuo
         $this->quoteFacade = $quoteFacade;
     }
 
-    /**
-     * @return string
-     */
     public function getStorageStrategy(): string
     {
         return $this->quoteFacade->getStorageStrategy();

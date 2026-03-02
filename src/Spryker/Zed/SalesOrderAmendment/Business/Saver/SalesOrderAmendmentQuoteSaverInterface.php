@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface SalesOrderAmendmentQuoteSaverInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function saveNotExistingSalesOrderAmendmentQuote(QuoteTransfer $quoteTransfer): void;
 }

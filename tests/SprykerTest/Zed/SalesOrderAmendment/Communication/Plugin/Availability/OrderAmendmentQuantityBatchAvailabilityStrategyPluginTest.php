@@ -46,9 +46,6 @@ class OrderAmendmentQuantityBatchAvailabilityStrategyPluginTest extends Unit
      */
     protected SalesOrderAmendmentCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     protected function _setUp(): void
     {
         parent::_setUp();
@@ -59,9 +56,6 @@ class OrderAmendmentQuantityBatchAvailabilityStrategyPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testFindItemsAvailabilityForStoreShouldBeSellableWhenOriginalItemQuantityPlusStockIsEnough(): void
     {
         // Arrange
@@ -86,9 +80,6 @@ class OrderAmendmentQuantityBatchAvailabilityStrategyPluginTest extends Unit
         $this->assertSame($originalQuantity + $stock, $sellableResponses[static::TEST_SKU]->getAvailableQuantity()->toInt());
     }
 
-    /**
-     * @return void
-     */
     public function testFindItemsAvailabilityForStoreWhenOriginalItemQuantityPlusStockIsNotEnoughShouldBeNotSellable(): void
     {
         // Arrange
@@ -113,9 +104,6 @@ class OrderAmendmentQuantityBatchAvailabilityStrategyPluginTest extends Unit
         $this->assertSame($originalQuantity + $stock, $sellableResponses[static::TEST_SKU]->getAvailableQuantity()->toInt());
     }
 
-    /**
-     * @return void
-     */
     public function testFindItemsAvailabilityForStoreWhenItemNotInOriginalOrderShouldNotBeProcessed(): void
     {
         // Arrange
@@ -137,9 +125,6 @@ class OrderAmendmentQuantityBatchAvailabilityStrategyPluginTest extends Unit
         $this->assertSame($stock, $sellableResponses[static::TEST_SKU]->getAvailableQuantity()->toInt());
     }
 
-    /**
-     * @return void
-     */
     public function testFindItemsAvailabilityForStoreWhenAvailabilityIsNegativeShouldUseOriginalQuantityAndBeSellable(): void
     {
         // Arrange
@@ -164,9 +149,6 @@ class OrderAmendmentQuantityBatchAvailabilityStrategyPluginTest extends Unit
         $this->assertSame($originalQuantity, $sellableResponses[static::TEST_SKU]->getAvailableQuantity()->toInt());
     }
 
-    /**
-     * @return void
-     */
     public function testFindItemsAvailabilityForStoreWithMultipleRequestsShouldBeNotSellableWhenOneRequestIsHigherThanAvailability(): void
     {
         // Arrange
@@ -191,13 +173,6 @@ class OrderAmendmentQuantityBatchAvailabilityStrategyPluginTest extends Unit
         $this->assertSame($originalQuantity + $stock, $sellableResponses[static::TEST_SKU]->getAvailableQuantity()->toInt());
     }
 
-    /**
-     * @param string $sku
-     * @param int $originalQuantity
-     * @param int ...$requestedQuantities
-     *
-     * @return \Generated\Shared\Transfer\SellableItemsRequestTransfer
-     */
     protected function createSellableItemsRequestTransfer(
         string $sku,
         int $originalQuantity,
@@ -216,12 +191,6 @@ class OrderAmendmentQuantityBatchAvailabilityStrategyPluginTest extends Unit
         return $sellableItemsRequestTransfer;
     }
 
-    /**
-     * @param string $sku
-     * @param int $availableQuantity
-     *
-     * @return \Generated\Shared\Transfer\SellableItemsResponseTransfer
-     */
     protected function createSellableItemsResponseTransfer(string $sku, int $availableQuantity): SellableItemsResponseTransfer
     {
         $sellableItemsResponseTransfer = new SellableItemsResponseTransfer();
@@ -230,21 +199,11 @@ class OrderAmendmentQuantityBatchAvailabilityStrategyPluginTest extends Unit
         return $sellableItemsResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return string
-     */
     protected function buildGroupKeyForItem(ItemTransfer $itemTransfer): string
     {
         return (new SalesOrderAmendmentService())->buildOriginalSalesOrderItemGroupKey($itemTransfer);
     }
 
-    /**
-     * @param string $sku
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function createItem(string $sku): ItemTransfer
     {
         return (new ItemTransfer())->setSku($sku);
@@ -265,9 +224,6 @@ class OrderAmendmentQuantityBatchAvailabilityStrategyPluginTest extends Unit
         return $sellableResponses;
     }
 
-    /**
-     * @return \Spryker\Zed\SalesOrderAmendment\Communication\Plugin\Availability\OrderAmendmentQuantityBatchAvailabilityStrategyPlugin
-     */
     protected function createOrderAmendmentQuantityBatchAvailabilityStrategyPlugin(): OrderAmendmentQuantityBatchAvailabilityStrategyPlugin
     {
         return (new OrderAmendmentQuantityBatchAvailabilityStrategyPlugin())

@@ -36,9 +36,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
      */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -47,9 +44,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
         $this->tester->ensureSalesOrderAmendmentTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentCollection(): void
     {
         // Arrange
@@ -66,9 +60,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
         $this->assertCount(2, $salesOrderAmendmentCollectionTransfer->getSalesOrderAmendments());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentCollectionFilteredByIdSalesOrderAmendment(): void
     {
         // Arrange
@@ -92,9 +83,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentCollectionFilteredByUuid(): void
     {
         // Arrange
@@ -118,9 +106,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentCollectionFilteredByOriginalOrderReference(): void
     {
         // Arrange
@@ -144,9 +129,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentCollectionSortedByFieldAsc(): void
     {
         // Arrange
@@ -179,9 +161,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
         $this->assertSame('order-reference-3', $salesOrderAmendmentTransfers->offsetGet(2)->getOriginalOrderReference());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentCollectionSortedByFieldDesc(): void
     {
         // Arrange
@@ -214,9 +193,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
         $this->assertSame('order-reference-1', $salesOrderAmendmentTransfers->offsetGet(2)->getOriginalOrderReference());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentCollectionPaginatedByLimitAndOffset(): void
     {
         // Arrange
@@ -245,9 +221,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
         $this->assertSame(5, $paginationTransfer->getNbResults());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnSalesOrderAmendmentCollectionPaginatedByPageAndMaxPerPage(): void
     {
         // Arrange
@@ -284,9 +257,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
         $this->assertSame(1, $paginationTransfer->getPreviousPageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteSalesOrderAmendmentExpanderPluginStack(): void
     {
         // Arrange
@@ -317,12 +287,6 @@ class GetSalesOrderAmendmentCollectionTest extends Unit
         return $salesOrderAmendmentExpanderPluginMock;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentCollectionTransfer $salesOrderAmendmentCollectionTransfer
-     * @param string $uuid
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer|null
-     */
     protected function findSalesOrderAmendmentInSalesOrderAmendmentCollection(
         SalesOrderAmendmentCollectionTransfer $salesOrderAmendmentCollectionTransfer,
         string $uuid

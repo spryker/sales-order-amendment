@@ -17,11 +17,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
      */
     public const PLUGINS_ORIGINAL_SALES_ORDER_ITEM_GROUP_KEY_EXPANDER = 'PLUGINS_ORIGINAL_SALES_ORDER_ITEM_GROUP_KEY_EXPANDER';
 
-    /**
-     * @param \Spryker\Service\Container\Container $container
-     *
-     * @return \Spryker\Service\Container\Container
-     */
     public function provideServiceDependencies(Container $container): Container
     {
         $container = $this->addOriginalSalesOrderItemsGroupKeyExpanderPlugins($container);
@@ -29,11 +24,6 @@ class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Service\Container\Container $container
-     *
-     * @return \Spryker\Service\Container\Container
-     */
     protected function addOriginalSalesOrderItemsGroupKeyExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_ORIGINAL_SALES_ORDER_ITEM_GROUP_KEY_EXPANDER, function () {

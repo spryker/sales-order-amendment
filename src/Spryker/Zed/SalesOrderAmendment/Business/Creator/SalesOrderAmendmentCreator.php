@@ -35,11 +35,6 @@ class SalesOrderAmendmentCreator implements SalesOrderAmendmentCreatorInterface
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentRequestTransfer $salesOrderAmendmentRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer
-     */
     public function createSalesOrderAmendment(
         SalesOrderAmendmentRequestTransfer $salesOrderAmendmentRequestTransfer
     ): SalesOrderAmendmentResponseTransfer {
@@ -63,11 +58,6 @@ class SalesOrderAmendmentCreator implements SalesOrderAmendmentCreatorInterface
         return $salesOrderAmendmentResponseTransfer->setSalesOrderAmendment($salesOrderAmendmentTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     protected function executeCreateSalesOrderAmendmentTransaction(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentTransfer {
@@ -79,11 +69,6 @@ class SalesOrderAmendmentCreator implements SalesOrderAmendmentCreatorInterface
         return $this->executeSalesOrderAmendmentPostCreatePlugins($salesOrderAmendmentTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     protected function executeSalesOrderAmendmentPreCreatePlugins(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentTransfer {
@@ -94,11 +79,6 @@ class SalesOrderAmendmentCreator implements SalesOrderAmendmentCreatorInterface
         return $salesOrderAmendmentTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     protected function executeSalesOrderAmendmentPostCreatePlugins(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentTransfer {
@@ -109,11 +89,6 @@ class SalesOrderAmendmentCreator implements SalesOrderAmendmentCreatorInterface
         return $salesOrderAmendmentTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentRequestTransfer $salesOrderAmendmentRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(SalesOrderAmendmentRequestTransfer $salesOrderAmendmentRequestTransfer): void
     {
         $salesOrderAmendmentRequestTransfer

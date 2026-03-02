@@ -41,9 +41,6 @@ class UpdateSalesOrderAmendmentQuoteCollectionTest extends Unit
      */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testUpdateSalesOrderAmendmentQuoteCollectionShouldUpdateQuotes(): void
     {
         // Arrange
@@ -69,9 +66,6 @@ class UpdateSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertSame('new-reference', $persistedSalesOrderAmendmentQuote->getAmendmentOrderReference());
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateSalesOrderAmendmentQuoteCollectionShouldReturnErrorWhenQuoteNotFound(): void
     {
         // Arrange
@@ -92,9 +86,6 @@ class UpdateSalesOrderAmendmentQuoteCollectionTest extends Unit
         $this->assertSame(sprintf(static::ERROR_NOT_FOUND_ENTITY, 123), $salesOrderAmendmentQuoteCollectionResponseTransfer->getErrors()->offsetGet(0)->getMessage());
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateSalesOrderAmendmentQuoteCollectionShouldThrowExceptionWhenIdSalesOrderAmendmentQuoteIsNotProvided(): void
     {
         // Arrange
@@ -113,9 +104,6 @@ class UpdateSalesOrderAmendmentQuoteCollectionTest extends Unit
             ->updateSalesOrderAmendmentQuoteCollection($salesOrderAmendmentQuoteCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateSalesOrderAmendmentQuoteCollectionShouldThrowExceptionWhenQuoteIsNotProvided(): void
     {
         // Arrange
@@ -134,9 +122,6 @@ class UpdateSalesOrderAmendmentQuoteCollectionTest extends Unit
             ->updateSalesOrderAmendmentQuoteCollection($salesOrderAmendmentQuoteCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateSalesOrderAmendmentQuoteCollectionShouldThrowExceptionWhenCustomerReferenceIsNotProvided(): void
     {
         // Arrange
@@ -155,9 +140,6 @@ class UpdateSalesOrderAmendmentQuoteCollectionTest extends Unit
             ->updateSalesOrderAmendmentQuoteCollection($salesOrderAmendmentQuoteCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateSalesOrderAmendmentQuoteCollectionShouldThrowExceptionWhenAmendmentOrderReferenceIsNotProvided(): void
     {
         // Arrange
@@ -176,9 +158,6 @@ class UpdateSalesOrderAmendmentQuoteCollectionTest extends Unit
             ->updateSalesOrderAmendmentQuoteCollection($salesOrderAmendmentQuoteCollectionRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldFilterQuoteFieldsDuringUpdate(): void
     {
         // Arrange

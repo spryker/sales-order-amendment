@@ -18,12 +18,6 @@ class CartReorderValidator implements CartReorderValidatorInterface
      */
     protected const GLOSSARY_KEY_ORDER_REFERENCE_NOT_MATCH = 'sales_order_amendment.validation.cart_reorder.order_reference_not_match';
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     * @param \Generated\Shared\Transfer\CartReorderResponseTransfer $cartReorderResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function validate(
         CartReorderTransfer $cartReorderTransfer,
         CartReorderResponseTransfer $cartReorderResponseTransfer
@@ -37,11 +31,6 @@ class CartReorderValidator implements CartReorderValidatorInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return bool
-     */
     protected function isOrderReferenceMatch(CartReorderTransfer $cartReorderTransfer): bool
     {
         return $cartReorderTransfer->getQuoteOrFail()->getAmendmentOrderReferenceOrFail() === $cartReorderTransfer->getOrderOrFail()->getOrderReferenceOrFail();

@@ -34,9 +34,6 @@ class CreateSalesOrderAmendmentTest extends Unit
      */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -44,9 +41,6 @@ class CreateSalesOrderAmendmentTest extends Unit
         $this->tester->configureTestStateMachine([SalesOrderAmendmentBusinessTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldPersistSalesOrderAmendment(): void
     {
         // Arrange
@@ -64,9 +58,6 @@ class CreateSalesOrderAmendmentTest extends Unit
         ));
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteSalesOrderAmendmentPreCreatePluginsStack(): void
     {
         // Arrange
@@ -81,9 +72,6 @@ class CreateSalesOrderAmendmentTest extends Unit
         $this->tester->getFacade()->createSalesOrderAmendment($salesOrderAmendmentRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteSalesOrderAmendmentPostCreatePluginsStack(): void
     {
         // Arrange
@@ -98,9 +86,6 @@ class CreateSalesOrderAmendmentTest extends Unit
         $this->tester->getFacade()->createSalesOrderAmendment($salesOrderAmendmentRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteSalesOrderAmendmentValidatorRulePluginsStack(): void
     {
         // Arrange
@@ -115,9 +100,6 @@ class CreateSalesOrderAmendmentTest extends Unit
         $this->tester->getFacade()->createSalesOrderAmendment($salesOrderAmendmentRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenOriginalOrderReferenceIsNotProvided(): void
     {
         // Arrange
@@ -134,9 +116,6 @@ class CreateSalesOrderAmendmentTest extends Unit
             ->createSalesOrderAmendment($salesOrderAmendmentRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenAmendedOrderReferenceIsNotProvided(): void
     {
         // Arrange

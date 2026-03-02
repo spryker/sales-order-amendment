@@ -48,9 +48,6 @@ class OriginalSalesOrderItemCartPreReorderPluginTest extends Unit
      */
     protected SalesOrderAmendmentCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldNotSetOriginalSalesOrderItemsToQuoteWhenIsAmendmentFalse(): void
     {
         // Arrange
@@ -69,9 +66,6 @@ class OriginalSalesOrderItemCartPreReorderPluginTest extends Unit
         $this->assertCount(0, $cartReorderTransfer->getQuote()->getOriginalSalesOrderItems());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotSetOriginalSalesOrderItemsToQuoteWhenIsAmendmentNull(): void
     {
         // Arrange
@@ -89,9 +83,6 @@ class OriginalSalesOrderItemCartPreReorderPluginTest extends Unit
         $this->assertCount(0, $cartReorderTransfer->getQuote()->getOriginalSalesOrderItems());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotSetOriginalSalesOrderItemsToQuoteWhenNoItemsAreProvidedInOrder(): void
     {
         // Arrange
@@ -112,9 +103,6 @@ class OriginalSalesOrderItemCartPreReorderPluginTest extends Unit
         $this->assertCount(0, $cartReorderTransfer->getQuote()->getOriginalSalesOrderItems());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenQuoteIsNotProvided(): void
     {
         // Arrange
@@ -135,9 +123,6 @@ class OriginalSalesOrderItemCartPreReorderPluginTest extends Unit
         (new OriginalSalesOrderItemCartPreReorderPlugin())->preReorder($cartReorderRequestTransfer, $cartReorderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenOrderIsNotProvided(): void
     {
         // Arrange
@@ -155,9 +140,6 @@ class OriginalSalesOrderItemCartPreReorderPluginTest extends Unit
         (new OriginalSalesOrderItemCartPreReorderPlugin())->preReorder($cartReorderRequestTransfer, $cartReorderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSetOriginalSalesOrderItemsToQuote(): void
     {
         // Arrange
@@ -184,9 +166,6 @@ class OriginalSalesOrderItemCartPreReorderPluginTest extends Unit
         $this->assertSame(static::ORIGINAL_SALES_ORDER_ITEM_GROUP_KEY, $cartReorderTransfer->getQuote()->getOriginalSalesOrderItems()[0]->getGroupKey());
     }
 
-    /**
-     * @return void
-     */
     protected function createSalesOrderAmendmentServiceMock(): void
     {
         $salesOrderAmendmentServiceMock = $this->getMockBuilder(SalesOrderAmendmentServiceInterface::class)

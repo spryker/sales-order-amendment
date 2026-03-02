@@ -19,18 +19,10 @@ class CartChecker implements CartCheckerInterface
      */
     protected const GLOSSARY_KEY_CART_CANT_BE_AMENDED = 'sales_order_amendment.validation.cart.cart_cant_be_amended';
 
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Reader\OrderReaderInterface $orderReader
-     */
     public function __construct(protected OrderReaderInterface $orderReader)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartChangeTransfer $cartChangeTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartPreCheckResponseTransfer
-     */
     public function check(CartChangeTransfer $cartChangeTransfer): CartPreCheckResponseTransfer
     {
         $quoteTransfer = $cartChangeTransfer->getQuoteOrFail();

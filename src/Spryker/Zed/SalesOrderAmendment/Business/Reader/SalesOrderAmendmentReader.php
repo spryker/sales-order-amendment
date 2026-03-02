@@ -23,11 +23,6 @@ class SalesOrderAmendmentReader implements SalesOrderAmendmentReaderInterface
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentCriteriaTransfer $salesOrderAmendmentCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentCollectionTransfer
-     */
     public function getSalesOrderAmendmentCollection(
         SalesOrderAmendmentCriteriaTransfer $salesOrderAmendmentCriteriaTransfer
     ): SalesOrderAmendmentCollectionTransfer {
@@ -37,11 +32,6 @@ class SalesOrderAmendmentReader implements SalesOrderAmendmentReaderInterface
         return $this->executeSalesOrderAmendmentExpanderPlugins($salesOrderAmendmentCollectionTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentCollectionTransfer $salesOrderAmendmentCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentCollectionTransfer
-     */
     protected function executeSalesOrderAmendmentExpanderPlugins(
         SalesOrderAmendmentCollectionTransfer $salesOrderAmendmentCollectionTransfer
     ): SalesOrderAmendmentCollectionTransfer {

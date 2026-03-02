@@ -36,12 +36,6 @@ class SalesOrderItemReplacer implements SalesOrderItemReplacerInterface
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\SaveOrderTransfer $saveOrderTransfer
-     *
-     * @return void
-     */
     public function replaceSalesOrderItems(QuoteTransfer $quoteTransfer, SaveOrderTransfer $saveOrderTransfer): void
     {
         $orderTransfer = $quoteTransfer->getOriginalOrderOrFail();
@@ -63,14 +57,6 @@ class SalesOrderItemReplacer implements SalesOrderItemReplacerInterface
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer $salesOrderAmendmentItemCollectionTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\SaveOrderTransfer $saveOrderTransfer
-     *
-     * @return void
-     */
     protected function executeReplaceSalesOrderItemsTransaction(
         SalesOrderAmendmentItemCollectionTransfer $salesOrderAmendmentItemCollectionTransfer,
         QuoteTransfer $quoteTransfer,
@@ -195,12 +181,6 @@ class SalesOrderItemReplacer implements SalesOrderItemReplacerInterface
             ->setQuote(clone $quoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer
-     */
     protected function getSalesOrderAmendmentItemsCollection(
         QuoteTransfer $quoteTransfer,
         OrderTransfer $orderTransfer
@@ -214,12 +194,6 @@ class SalesOrderItemReplacer implements SalesOrderItemReplacerInterface
         return $this->defaultSalesOrderAmendmentItemCollectorStrategy->collect($quoteTransfer, $orderTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer $salesOrderAmendmentItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer
-     */
     protected function executeSalesOrderItemCollectorPlugins(
         OrderTransfer $orderTransfer,
         SalesOrderAmendmentItemCollectionTransfer $salesOrderAmendmentItemCollectionTransfer

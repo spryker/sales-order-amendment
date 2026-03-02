@@ -20,11 +20,6 @@ class SalesOrderAmendmentQuoteDeleter implements SalesOrderAmendmentQuoteDeleter
 {
     use TransactionTrait;
 
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Persistence\SalesOrderAmendmentRepositoryInterface $salesOrderAmendmentRepository
-     * @param \Spryker\Zed\SalesOrderAmendment\Persistence\SalesOrderAmendmentEntityManagerInterface $salesOrderAmendmentEntityManager
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Mapper\SalesOrderAmendmentQuoteCriteriaMapperInterface $salesOrderAmendmentQuoteCriteriaMapper
-     */
     public function __construct(
         protected SalesOrderAmendmentRepositoryInterface $salesOrderAmendmentRepository,
         protected SalesOrderAmendmentEntityManagerInterface $salesOrderAmendmentEntityManager,
@@ -32,11 +27,6 @@ class SalesOrderAmendmentQuoteDeleter implements SalesOrderAmendmentQuoteDeleter
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionDeleteCriteriaTransfer $salesOrderAmendmentQuoteCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionResponseTransfer
-     */
     public function deleteSalesOrderAmendmentQuoteCollection(
         SalesOrderAmendmentQuoteCollectionDeleteCriteriaTransfer $salesOrderAmendmentQuoteCollectionDeleteCriteriaTransfer
     ): SalesOrderAmendmentQuoteCollectionResponseTransfer {
@@ -56,11 +46,6 @@ class SalesOrderAmendmentQuoteDeleter implements SalesOrderAmendmentQuoteDeleter
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionTransfer $salesOrderAmendmentQuoteCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentQuoteCollectionResponseTransfer
-     */
     protected function executeDeleteSalesOrderAmendmentQuoteCollectionTransaction(
         SalesOrderAmendmentQuoteCollectionTransfer $salesOrderAmendmentQuoteCollectionTransfer
     ): SalesOrderAmendmentQuoteCollectionResponseTransfer {

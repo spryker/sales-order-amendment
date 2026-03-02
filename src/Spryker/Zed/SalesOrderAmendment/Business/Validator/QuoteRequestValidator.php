@@ -28,11 +28,6 @@ class QuoteRequestValidator implements QuoteRequestValidatorInterface
      */
     protected const GLOSSARY_KEY_ORDER_AMENDMENT_AFTER_QUOTE_REQUEST_IS_FORBIDDEN = 'sales_order_amendment.order_amendment_after_rfq.validation.error.forbidden';
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteRequestTransfer $quoteRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteRequestResponseTransfer
-     */
     public function validate(QuoteRequestTransfer $quoteRequestTransfer): QuoteRequestResponseTransfer
     {
         $quoteRequestResponseTransfer = (new QuoteRequestResponseTransfer())->setIsSuccessful(true);
@@ -51,12 +46,6 @@ class QuoteRequestValidator implements QuoteRequestValidatorInterface
         return $quoteRequestResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     * @param \Generated\Shared\Transfer\CartReorderResponseTransfer $cartReorderResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function validateCartReorder(
         CartReorderTransfer $cartReorderTransfer,
         CartReorderResponseTransfer $cartReorderResponseTransfer
@@ -70,21 +59,11 @@ class QuoteRequestValidator implements QuoteRequestValidatorInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteRequestTransfer $quoteRequestTransfer
-     *
-     * @return bool
-     */
     protected function isQuoteRequestReadyForValidation(QuoteRequestTransfer $quoteRequestTransfer): bool
     {
         return $quoteRequestTransfer->getLatestVersion() && $quoteRequestTransfer->getLatestVersionOrFail()->getQuote();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     protected function isQuoteInAmendmentProcess(QuoteTransfer $quoteTransfer): bool
     {
         if (

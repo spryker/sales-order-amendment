@@ -35,9 +35,6 @@ class OrderAmendmentQuoteRequestValidatorPluginTest extends Unit
      */
     protected const GLOSSARY_KEY_QUOTE_REQUEST_IN_ORDER_AMENDMENT_IS_FORBIDDEN = 'sales_order_amendment.quote_request.validation.error.forbidden';
 
-    /**
-     * @return void
-     */
     public function testShouldReturnErrorWhenCartIsInAmendmentProcessByQuoteProcessFlow(): void
     {
         // Arrange
@@ -62,9 +59,6 @@ class OrderAmendmentQuoteRequestValidatorPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnErrorWhenCartIsInAmendmentProcessByAmendmentOrderReference(): void
     {
         // Arrange
@@ -89,9 +83,6 @@ class OrderAmendmentQuoteRequestValidatorPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotReturnErrorWhenCartIsNotInAmendmentProcess(): void
     {
         // Arrange

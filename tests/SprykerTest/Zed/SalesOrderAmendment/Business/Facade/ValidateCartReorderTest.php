@@ -39,9 +39,6 @@ class ValidateCartReorderTest extends Unit
      */
     protected SalesOrderAmendmentBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testReturnsErrorWhenOrderReferencesAreNotEqual(): void
     {
         // Arrange
@@ -64,9 +61,6 @@ class ValidateCartReorderTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotReturnErrorWhenOrderReferencesAreEqual(): void
     {
         // Arrange

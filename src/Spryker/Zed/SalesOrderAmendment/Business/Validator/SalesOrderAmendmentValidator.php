@@ -23,11 +23,6 @@ class SalesOrderAmendmentValidator implements SalesOrderAmendmentValidatorInterf
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer
-     */
     public function validate(SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer): SalesOrderAmendmentResponseTransfer
     {
         $salesOrderAmendmentResponseTransfer = (new SalesOrderAmendmentResponseTransfer())
@@ -51,12 +46,6 @@ class SalesOrderAmendmentValidator implements SalesOrderAmendmentValidatorInterf
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer $salesOrderAmendmentResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer
-     */
     protected function executeSalesOrderAmendmentValidatorRulePlugins(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer,
         SalesOrderAmendmentResponseTransfer $salesOrderAmendmentResponseTransfer
@@ -72,12 +61,6 @@ class SalesOrderAmendmentValidator implements SalesOrderAmendmentValidatorInterf
         return $salesOrderAmendmentResponseTransfer;
     }
 
-    /**
-     * @param \Spryker\Zed\SalesOrderAmendment\Business\Validator\Rules\SalesOrderAmendment\SalesOrderAmendmentValidatorRuleInterface $validatorRule
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     *
-     * @return bool
-     */
     protected function isValidationTerminated(
         SalesOrderAmendmentValidatorRuleInterface $validatorRule,
         ErrorCollectionTransfer $errorCollectionTransfer
@@ -89,12 +72,6 @@ class SalesOrderAmendmentValidator implements SalesOrderAmendmentValidatorInterf
         return $errorCollectionTransfer->getErrors()->count() > 0;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer $salesOrderAmendmentResponseTransfer
-     * @param \Generated\Shared\Transfer\ErrorCollectionTransfer $errorCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer
-     */
     protected function mergeErrors(
         SalesOrderAmendmentResponseTransfer $salesOrderAmendmentResponseTransfer,
         ErrorCollectionTransfer $errorCollectionTransfer

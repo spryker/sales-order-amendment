@@ -38,11 +38,6 @@ class SalesOrderAmendmentDeleter implements SalesOrderAmendmentDeleterInterface
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentDeleteCriteriaTransfer $salesOrderAmendmentDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentResponseTransfer
-     */
     public function deleteSalesOrderAmendment(
         SalesOrderAmendmentDeleteCriteriaTransfer $salesOrderAmendmentDeleteCriteriaTransfer
     ): SalesOrderAmendmentResponseTransfer {
@@ -63,11 +58,6 @@ class SalesOrderAmendmentDeleter implements SalesOrderAmendmentDeleterInterface
         return $salesOrderAmendmentResponseTransfer->setSalesOrderAmendment($salesOrderAmendmentTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     protected function executeDeleteSalesOrderAmendmentTransaction(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentTransfer {
@@ -77,11 +67,6 @@ class SalesOrderAmendmentDeleter implements SalesOrderAmendmentDeleterInterface
         return $this->executeSalesOrderAmendmentPostDeletePlugins($salesOrderAmendmentTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     protected function executeSalesOrderAmendmentPreDeletePlugins(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentTransfer {
@@ -92,11 +77,6 @@ class SalesOrderAmendmentDeleter implements SalesOrderAmendmentDeleterInterface
         return $salesOrderAmendmentTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentTransfer
-     */
     protected function executeSalesOrderAmendmentPostDeletePlugins(
         SalesOrderAmendmentTransfer $salesOrderAmendmentTransfer
     ): SalesOrderAmendmentTransfer {
@@ -107,9 +87,6 @@ class SalesOrderAmendmentDeleter implements SalesOrderAmendmentDeleterInterface
         return $salesOrderAmendmentTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ErrorTransfer
-     */
     protected function createSalesOrderAmendmentNotFoundError(): ErrorTransfer
     {
         return (new ErrorTransfer())->setMessage(static::ERROR_MESSAGE_SALES_ORDER_AMENDMENT_NOT_FOUND);
