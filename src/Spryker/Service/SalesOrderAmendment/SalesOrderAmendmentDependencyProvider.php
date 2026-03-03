@@ -7,7 +7,7 @@
 
 namespace Spryker\Service\SalesOrderAmendment;
 
-use Spryker\Service\Container\Container;
+use Spryker\Service\Kernel\Container;
 use Spryker\Service\Kernel\AbstractBundleDependencyProvider;
 
 class SalesOrderAmendmentDependencyProvider extends AbstractBundleDependencyProvider
