@@ -72,7 +72,7 @@ class GroupKeyQuantitySalesOrderAmendmentItemCollectorStrategy implements SalesO
             return $salesOrderAmendmentItemCollectionTransfer;
         }
 
-        if (isset($quoteItemTransfersGroupedByGroupKey[$groupKey]) && isset($orderItemTransfersGroupedByGroupKey[$groupKey])) {
+        if (isset($orderItemTransfersGroupedByGroupKey[$groupKey])) {
             $salesOrderAmendmentItemCollectionTransfer = $this->addExistingByGroupKeyItems(
                 $salesOrderAmendmentItemCollectionTransfer,
                 $quoteItemTransfersGroupedByGroupKey,
